@@ -3,7 +3,9 @@ const Footer = () => {
         <footer className='bg-gray-800 text-white p-6'>
             <div className='container mx-auto flex justify-between items-center'>
                 <div>
-                    <h1 className='text-lg font-bold'>Your CCA Name</h1>
+                    <h1 className='text-lg font-bold'>
+                        SMU-ILA Student Chapter
+                    </h1>
                     <p className='text-sm'>A brief description of your CCA.</p>
                 </div>
                 <div className='space-y-2'>
