@@ -1,4 +1,4 @@
-export interface PostMetadata {
+export type PostMetadata = {
     title: string;
     subtitle: string;
     author: string;
@@ -6,4 +6,4 @@ export interface PostMetadata {
     tags: string[];
     hidden: boolean;
     slug: string;
-}
+};
