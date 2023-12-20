@@ -1,5 +1,32 @@
+import ContentArea from '@/components/ContentArea';
+import TextSection from '@/components/TextSection';
+
 const ContactPage = () => {
-    return <div>TODO: Contact page</div>;
+    return (
+        <ContentArea>
+            <TextSection heading='Get in touch'>
+                Proin volutpat consequat porttitor cras nullam gravida at. Orci
+                molestie a eu arcu. Sed ut tincidunt integer elementum id sem.
+                Arcu sed malesuada et magna.
+            </TextSection>
+
+            {/* TODO: insert contact info */}
+            <div className='grid grid-cols-1 p-4'>
+                <div>
+                    <i className='bx bx-buildings p-4 text-2xl align-middle'></i>
+                    545 Mavis Island Chicago, IL 99191
+                </div>
+                <div>
+                    <i className='bx bx-phone p-4 text-2xl align-middle'></i>
+                    +1 (555) 234-5678
+                </div>
+                <div>
+                    <i className='bx bx-envelope p-4 text-2xl align-middle'></i>
+                    hello@example.com
+                </div>
+            </div>
+        </ContentArea>
+    );
 };
 
 export default ContactPage;

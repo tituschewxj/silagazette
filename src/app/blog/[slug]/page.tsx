@@ -1,8 +1,9 @@
 import Markdown from 'markdown-to-jsx';
 import getPostMetadata from '@/components/getPostMetadata';
-import { PostMetadata } from '@/components/PostMetadata';
+import { PostMetadata } from '@/types/PostMetadata';
 import PostHeader from '@/components/PostHeader';
 import getPostContent from '@/components/getPostContent';
+import ContentArea from '@/components/ContentArea';
 
 // Statically generate site
 export const generateStaticParams = async () => {
@@ -17,12 +18,12 @@ const PostPage = (props: { params: PostMetadata }) => {
     const content = getPostContent(slug).content;
     const metadata: PostMetadata = props.params;
     return (
-        <>
+        <ContentArea>
             <PostHeader {...metadata} />
-            <article className='prose'>
+            <article className='prose font-serif'>
                 <Markdown>{content}</Markdown>
             </article>
-        </>
+        </ContentArea>
     );
 };
 
