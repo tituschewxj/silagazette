@@ -2,6 +2,7 @@ import { PostMetadata } from '../types/PostMetadata';
 import getPostContent from './getPostContent';
 import getFormattedDate from './getFormattedDate';
 import TagsList from './TagsList';
+import Link from 'next/link';
 
 const PostPreview = (props: { metadata: PostMetadata }) => {
     // TODO: add description for post
@@ -9,9 +10,9 @@ const PostPreview = (props: { metadata: PostMetadata }) => {
     const post = getPostContent(slug);
     return (
         <>
-            <a href={`/blog/${props.metadata.slug}`}>
-                <div className='group my-8 rounded-lg p-8 shadow-md hover:bg-gray-100'>
-                    <h1 className='font-serif text-2xl font-bold tracking-tight group-hover:text-red-700 group-hover:underline'>
+            <Link href={`/blog/${props.metadata.slug}`}>
+                <div className='group my-8 rounded-lg p-8 shadow-md transition duration-200 hover:bg-gray-100'>
+                    <h1 className='font-serif text-2xl font-bold tracking-tight transition duration-150 group-hover:text-red-700 group-hover:underline'>
                         {post.data.title}
                     </h1>
 
@@ -27,7 +28,7 @@ const PostPreview = (props: { metadata: PostMetadata }) => {
                     {/* NOTE: cannot nest anchor */}
                     {/* <TagsList tags={post.data.tags} /> */}
                 </div>
-            </a>
+            </Link>
         </>
     );
 };

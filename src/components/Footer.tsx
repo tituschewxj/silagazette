@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Footer = () => {
     return (
         <footer className='bg-gray-800 p-6 pt-14 text-white'>
@@ -14,24 +16,24 @@ const Footer = () => {
                 {/* Navigation links */}
                 <div className='space-y-2'>
                     <p className='text-sm'>
-                        <a href='/' className='hover:text-gray-300'>
+                        <Link href='/' className='hover:text-gray-300'>
                             Home
-                        </a>
+                        </Link>
                     </p>
                     <p className='text-sm'>
-                        <a href='/blog' className='hover:text-gray-300'>
+                        <Link href='/blog' className='hover:text-gray-300'>
                             Blog
-                        </a>
+                        </Link>
                     </p>
                     <p className='text-sm'>
-                        <a href='/about' className='hover:text-gray-300'>
+                        <Link href='/about' className='hover:text-gray-300'>
                             About Us
-                        </a>
+                        </Link>
                     </p>
                     <p className='text-sm'>
-                        <a href='/contact' className='hover:text-gray-300'>
+                        <Link href='/contact' className='hover:text-gray-300'>
                             Contact
-                        </a>
+                        </Link>
                     </p>
                 </div>
 
@@ -40,24 +42,24 @@ const Footer = () => {
                     <p className='p-2 text-sm'>Follow Us:</p>
                     <div className='flex space-x-2 p-2'>
                         {/* TODO: Add links to social media */}
-                        <a
+                        <Link
                             href='#'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-facebook-square'></i>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='#'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-linkedin'></i>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='#'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-instagram'></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

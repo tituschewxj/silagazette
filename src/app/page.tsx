@@ -25,7 +25,7 @@ export default function HomePage() {
         <main>
             {/* Hero section */}
             {/* NOTE: Could add background image */}
-            <section className='flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white'>
+            <section className='flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white shadow-md '>
                 <div className='container mx-auto text-center'>
                     <h1 className='mb-4 text-4xl font-bold leading-tight'>
                         Welcome to the Singapore International Law Gazette
