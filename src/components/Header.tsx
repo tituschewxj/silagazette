@@ -1,10 +1,12 @@
 const Header = () => {
     return (
-        <header className='bg-red-900 text-white p-4'>
+        <header className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white p-4'>
             <div className='container mx-auto flex justify-between items-center'>
-                <a href='/' className='text-lg font-bold'>
-                    <img className='h-16' src='SMU ILA temporary logo.png' />
-                    <div>SMU-ILA Student Chapter</div>
+                <a href='/' className='text-lg font-bold flex items-center'>
+                    <img className='h-10' src='/SMU ILA temporary logo.png' />
+                    <div className='text-3xl font-extralight font-serif px-2 tracking-tight'>
+                        Singapore International Law Gazette
+                    </div>
                 </a>
 
                 {/* <!-- Navigation --> */}

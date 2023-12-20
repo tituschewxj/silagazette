@@ -1,4 +1,4 @@
-import { PostMetadata } from './PostMetadata';
+import { PostMetadata } from '../types/PostMetadata';
 import fs from 'fs';
 import matter from 'gray-matter';
 
