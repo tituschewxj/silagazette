@@ -1,14 +1,17 @@
+// 'use client';
+
 import ContentArea from '@/components/ContentArea';
-import getPostMetadata from '@/components/getPostMetadata';
-import { PostMetadata } from '@/types/PostMetadata';
+import getPostsData from '@/components/getPostsData';
+import { PostData, PostMetadata } from '@/types/PostMetadata';
 import PostPreview from '@/components/PostPreview';
+// import { useSearchParams } from 'next/navigation';
 
 const BlogPage = () => {
-    const postMetadata = getPostMetadata();
+    const postMetadata = getPostsData();
     // Sort by date
     const sortedPostsMetadata = postMetadata.sort(
-        (a: PostMetadata, b: PostMetadata) => {
-            if (Date.parse(a.date) < Date.parse(b.date)) {
+        (a: PostData, b: PostData) => {
+            if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
                 return 1;
             } else {
                 return -1;
@@ -16,10 +19,15 @@ const BlogPage = () => {
         },
     );
     const postPreviews = sortedPostsMetadata.map((post) => {
-        return <PostPreview key={post.slug} metadata={post} />;
+        return <PostPreview key={post.data.slug} metadata={post.data} />;
     });
 
-    // TODO: sort by date, paginate
+    // Search
+    // const searchParams = useSearchParams();
+    // const search = searchParams.get('tag');
+    // console.log(search);
+
+    // TODO: sorter, paginate
     return <ContentArea>{postPreviews}</ContentArea>;
 };
 

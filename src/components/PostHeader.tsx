@@ -1,9 +1,9 @@
 import TagsList from './TagsList';
 import getFormattedDate from './getFormattedDate';
-import getPostContent from './getPostContent';
+import { getPostData } from './getPostsData';
 
 const PostHeader = (props: { slug: string }) => {
-    const post = getPostContent(props.slug);
+    const post = getPostData(props.slug);
     return (
         <>
             <h1 className='my-8 font-serif text-4xl font-bold tracking-tight'>

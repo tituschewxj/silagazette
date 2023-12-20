@@ -1,15 +1,15 @@
 import ContentArea from '@/components/ContentArea';
-import { PostMetadata } from '@/types/PostMetadata';
+import { PostData, PostMetadata } from '@/types/PostMetadata';
 import PostPreview from '@/components/PostPreview';
-import getPostMetadata from '@/components/getPostMetadata';
+import getPostsData from '@/components/getPostsData';
 import Button from '@/components/Button';
 
 export default function HomePage() {
-    const postMetadata = getPostMetadata();
+    const postMetadata = getPostsData();
     // Sort by date
     const sortedPostsMetadata = postMetadata.sort(
-        (a: PostMetadata, b: PostMetadata) => {
-            if (Date.parse(a.date) < Date.parse(b.date)) {
+        (a: PostData, b: PostData) => {
+            if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
                 return 1;
             } else {
                 return -1;
@@ -18,7 +18,7 @@ export default function HomePage() {
     );
     const sortedFilteredPostsMetadata = sortedPostsMetadata.slice(0, 3);
     const postPreviews = sortedFilteredPostsMetadata.map((post) => {
-        return <PostPreview key={post.slug} metadata={post} />;
+        return <PostPreview key={post.data.slug} metadata={post.data} />;
     });
 
     return (

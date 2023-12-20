@@ -7,3 +7,8 @@ export type PostMetadata = {
     hidden: boolean;
     slug: string;
 };
+
+export type PostData = {
+    data: PostMetadata;
+    content: string;
+};

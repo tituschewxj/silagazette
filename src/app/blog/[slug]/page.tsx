@@ -1,37 +1,38 @@
 import Markdown from 'markdown-to-jsx';
-import getPostMetadata from '@/components/getPostMetadata';
-import { PostMetadata } from '@/types/PostMetadata';
+import getPostsData, {
+    getPostData,
+    isValidPost,
+} from '@/components/getPostsData';
+import { PostData, PostMetadata } from '@/types/PostMetadata';
 import PostHeader from '@/components/PostHeader';
-import getPostContent from '@/components/getPostContent';
 import ContentArea from '@/components/ContentArea';
 import { notFound } from 'next/navigation';
 
 // Statically generate site: statically generate routes at build time.
 export const generateStaticParams = async () => {
-    const posts = getPostMetadata();
+    const posts = getPostsData();
 
-    return posts.map((post: PostMetadata) => ({
-        slug: post.slug,
+    return posts.map((post: PostData) => ({
+        slug: post.data.slug,
     }));
 };
 
 const PostPage = (props: { params: PostMetadata }) => {
     const slug = props.params.slug;
+    const content = getPostData(slug).content;
+    const metadata: PostMetadata = props.params;
+
     // Handle invalid paths
-    try {
-        const content = getPostContent(slug).content;
-        const metadata: PostMetadata = props.params;
-        return (
-            <ContentArea>
-                <PostHeader {...metadata} />
-                <article className='prose'>
-                    <Markdown>{content}</Markdown>
-                </article>
-            </ContentArea>
-        );
-    } catch (err) {
-        return notFound();
-    }
+    return isValidPost(slug) ? (
+        <ContentArea>
+            <PostHeader {...metadata} />
+            <article className='prose'>
+                <Markdown>{content}</Markdown>
+            </article>
+        </ContentArea>
+    ) : (
+        notFound()
+    );
 };
 
 export default PostPage;
