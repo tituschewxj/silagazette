@@ -6,7 +6,7 @@ const PostHeader = (props: { slug: string }) => {
     const post = getPostContent(props.slug);
     return (
         <>
-            <h1 className='text-4xl font-bold font-serif tracking-tight my-8'>
+            <h1 className='my-8 font-serif text-4xl font-bold tracking-tight'>
                 {post.data.title}
             </h1>
             <h2 className='text-xl text-slate-700'>{post.data.subtitle}</h2>

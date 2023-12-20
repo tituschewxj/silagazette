@@ -21,7 +21,7 @@ export default function RootLayout({
                     rel='stylesheet'
                 />
             </head>
-            <body className={`font-sans flex flex-col min-h-screen`}>
+            <body className={`flex min-h-screen flex-col font-sans`}>
                 <Header />
                 {/* TODO: Nav Bar */}
                 <div className='flex-grow'>{children}</div>

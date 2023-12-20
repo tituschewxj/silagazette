@@ -11,7 +11,7 @@ const PostPreview = (props: { metadata: PostMetadata }) => {
         <>
             <a href={`/blog/${props.metadata.slug}`}>
                 <div className='group my-8 rounded-lg p-8 shadow-md hover:bg-gray-100'>
-                    <h1 className='text-2xl font-bold font-serif tracking-tight group-hover:text-red-700 group-hover:underline'>
+                    <h1 className='font-serif text-2xl font-bold tracking-tight group-hover:text-red-700 group-hover:underline'>
                         {post.data.title}
                     </h1>
 

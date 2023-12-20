@@ -5,7 +5,7 @@ import TextSection from '@/components/TextSection';
 const AboutUsPage = () => {
     return (
         <ContentArea>
-            <h1 className='text-3xl font-extrabold m-4'>Insert catchphrase.</h1>
+            <h1 className='m-4 text-3xl font-extrabold'>Insert catchphrase.</h1>
             <TextSection>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Suspendisse iaculis erat sit amet lorem iaculis, vitae ultrices

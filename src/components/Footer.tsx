@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
-        <footer className='bg-gray-800 text-white p-6 pt-14'>
-            <div className='container mx-auto flex justify-around items-center'>
+        <footer className='bg-gray-800 p-6 pt-14 text-white'>
+            <div className='container mx-auto flex items-center justify-around'>
                 <div>
                     <h1 className='text-lg font-bold'>
                         SMU-ILA Student Chapter
@@ -37,7 +37,7 @@ const Footer = () => {
 
                 {/* Social media links */}
                 <div>
-                    <p className='text-sm p-2'>Follow Us:</p>
+                    <p className='p-2 text-sm'>Follow Us:</p>
                     <div className='flex space-x-2 p-2'>
                         {/* TODO: Add links to social media */}
                         <a
@@ -63,7 +63,7 @@ const Footer = () => {
             </div>
             {/* Copyright */}
             {/* TODO: include statement about the rights reserved or provide a link to a more detailed terms of use or copyright policy page if applicable */}
-            <div className='text-center text-xs text-slate-400 mt-14 mb-2'>
+            <div className='mb-2 mt-14 text-center text-xs text-slate-400'>
                 ©2023 Singapore Management University-International Law
                 Association Student Chapter. All rights reserved.
             </div>

@@ -25,12 +25,12 @@ export default function HomePage() {
         <main>
             {/* Hero section */}
             {/* NOTE: Could add background image */}
-            <section className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white h-screen flex items-center'>
+            <section className='flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white'>
                 <div className='container mx-auto text-center'>
-                    <h1 className='text-4xl font-bold leading-tight mb-4'>
+                    <h1 className='mb-4 text-4xl font-bold leading-tight'>
                         Welcome to the Singapore International Law Gazette
                     </h1>
-                    <p className='text-lg md:text-xl mb-8'>
+                    <p className='mb-8 text-lg md:text-xl'>
                         A brief description of what your website is about.
                     </p>
                     <Button href='/blog'>Get started</Button>
@@ -38,7 +38,7 @@ export default function HomePage() {
             </section>
 
             <ContentArea>
-                <h2 className='text-3xl font-bold mb-4'>Latest Posts</h2>
+                <h2 className='mb-4 text-3xl font-bold'>Latest Posts</h2>
                 {postPreviews}
                 <Button href='/blog'>More posts</Button>
             </ContentArea>

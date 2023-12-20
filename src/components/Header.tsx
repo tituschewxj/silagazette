@@ -1,10 +1,10 @@
 const Header = () => {
     return (
-        <header className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white p-4'>
-            <div className='container mx-auto flex justify-between items-center'>
-                <a href='/' className='text-lg font-bold flex items-center'>
+        <header className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 p-4 text-white'>
+            <div className='container mx-auto flex items-center justify-between'>
+                <a href='/' className='flex items-center text-lg font-bold'>
                     <img className='h-10' src='/SMU ILA temporary logo.png' />
-                    <div className='text-3xl font-extralight font-serif px-2 tracking-tight'>
+                    <div className='px-2 font-serif text-3xl font-extralight tracking-tight'>
                         Singapore International Law Gazette
                     </div>
                 </a>
