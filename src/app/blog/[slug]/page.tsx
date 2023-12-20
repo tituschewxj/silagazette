@@ -24,7 +24,7 @@ const PostPage = (props: { params: PostMetadata }) => {
         return (
             <ContentArea>
                 <PostHeader {...metadata} />
-                <article className='prose font-serif'>
+                <article className='prose'>
                     <Markdown>{content}</Markdown>
                 </article>
             </ContentArea>

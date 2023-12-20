@@ -38,7 +38,7 @@ const AboutUsPage = () => {
             {/* NOTE: Add sponsors? */}
             <hr />
 
-            <TextSection heading='Our team'>
+            <TextSection heading='2024 Organising Committee'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 euismod vel nulla id vulputate. Cras nec tortor dui. Sed
                 molestie.

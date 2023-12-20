@@ -2,6 +2,7 @@ import ContentArea from '@/components/ContentArea';
 import { PostMetadata } from '@/types/PostMetadata';
 import PostPreview from '@/components/PostPreview';
 import getPostMetadata from '@/components/getPostMetadata';
+import Button from '@/components/Button';
 
 export default function HomePage() {
     const postMetadata = getPostMetadata();
@@ -32,26 +33,14 @@ export default function HomePage() {
                     <p className='text-lg md:text-xl mb-8'>
                         A brief description of what your website is about.
                     </p>
-                    <a
-                        href='/blog'
-                        className='bg-white text-red-500 py-2 px-4 rounded-full font-semibold hover:bg-gray-100 transition duration-300'
-                    >
-                        Get Started
-                    </a>
+                    <Button href='/blog'>Get started</Button>
                 </div>
             </section>
 
             <ContentArea>
                 <h2 className='text-3xl font-bold mb-4'>Latest Posts</h2>
                 {postPreviews}
-                <div className='mx-auto py-8 text-center'>
-                    <a
-                        href='/blog'
-                        className='bg-white border shadow-sm text-red-700 py-2 px-4 rounded-full font-semibold hover:bg-gray-100 transition duration-300'
-                    >
-                        More posts
-                    </a>
-                </div>
+                <Button href='/blog'>More posts</Button>
             </ContentArea>
         </main>
     );

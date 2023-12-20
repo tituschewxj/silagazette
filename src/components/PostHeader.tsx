@@ -1,3 +1,4 @@
+import TagsList from './TagsList';
 import getFormattedDate from './getFormattedDate';
 import getPostContent from './getPostContent';
 
@@ -13,6 +14,7 @@ const PostHeader = (props: { slug: string }) => {
                 Published on {getFormattedDate(post.data.date)}
             </div>
             <div className='text-sm text-slate-500'>By {post.data.author}</div>
+            <TagsList tags={post.data.tags} />
         </>
     );
 };
