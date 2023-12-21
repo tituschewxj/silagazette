@@ -1,13 +1,12 @@
-import { PostMetadata } from '../types/PostMetadata';
+import { PostData } from '../types/PostMetadata';
 import getFormattedDate from './getFormattedDate';
-import { getPostData } from './getPostsData';
 import TagsList from './TagsList';
 import Link from 'next/link';
 
-const PostPreview = (props: { metadata: PostMetadata }) => {
+const PostPreview = (props: { post: PostData }) => {
     // TODO: add description for post
-    const slug = props.metadata.slug;
-    const post = getPostData(slug);
+    const slug = props.post.data.slug;
+    const post = props.post;
     return (
         <>
             <Link href={`/blog/${slug}`}>

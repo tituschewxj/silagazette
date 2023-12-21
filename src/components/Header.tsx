@@ -22,7 +22,8 @@ const Header = () => {
                     <Link href='/contact' className='hover:text-gray-300'>
                         Contact
                     </Link>
-                    <i className='bx bx-search text-xl'></i>
+                    {/* TODO: Search feature */}
+                    {/* <i className='bx bx-search text-xl'></i> */}
                 </nav>
             </div>
         </header>
