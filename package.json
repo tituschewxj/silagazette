@@ -10,6 +10,8 @@
         "prepare": "husky install"
     },
     "dependencies": {
+        "@types/elasticlunr": "^0.9.9",
+        "elasticlunr": "^0.9.5",
         "gray-matter": "^4.0.3",
         "markdown-to-jsx": "^7.3.2",
         "next": "14.0.4",
