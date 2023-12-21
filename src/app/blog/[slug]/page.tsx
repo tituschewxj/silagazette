@@ -19,7 +19,6 @@ export const generateStaticParams = async () => {
 
 const PostPage = (props: { params: PostMetadata }) => {
     const slug = props.params.slug;
-    const content = getPostData(slug).content;
     const metadata: PostMetadata = props.params;
 
     // Handle invalid paths
@@ -27,7 +26,7 @@ const PostPage = (props: { params: PostMetadata }) => {
         <ContentArea>
             <PostHeader {...metadata} />
             <article className='prose'>
-                <Markdown>{content}</Markdown>
+                <Markdown>{getPostData(slug).content}</Markdown>
             </article>
         </ContentArea>
     ) : (
