@@ -13,8 +13,7 @@ const SearchContainer = (props: {
     allTags: Set<string>;
 }) => {
     const searchParams = useSearchParams();
-    const tags = searchParams.getAll('tags');
-    const tagsSet = new Set(tags);
+    const tags = new Set(searchParams.getAll('tags'));
     const query = searchParams.get('query');
 
     const router = useRouter();
@@ -73,19 +72,33 @@ const SearchContainer = (props: {
 
         // Filtering based on tags
         const filteredPostsData = searchResults.filter((post: PostData) => {
-            if (tagsSet.size == 0) return true;
-            return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
+            if (tags.size == 0) return true;
+            return post.data.tags.filter((tag) => tags.has(tag)).length != 0;
         });
 
         // Generate post previews
         setPostPreviews(filteredPostsData);
-    }, [query]);
+    }, [query, tags.size]);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (searchData.query.trim() == '') return;
         router.push(`/blog?query=${searchData.query.trim()}`);
         setSearchData({ query: '', tags: '' });
+    };
+
+    const clearResults = () => {
+        router.push('/blog');
+    };
+
+    const removeTag = (tag: string) => {
+        tags.delete(tag);
+        router.push(
+            `blog
+            ${query ? `?query=${query}` : ''}
+            ${tags.size != 0 ? '&&' : ''}
+            ${Array.from(tags).map((tag) => `tags=${tag}`)}`,
+        );
     };
 
     return (
@@ -110,13 +123,16 @@ const SearchContainer = (props: {
                 </form>
             </div>
             {/* Search results */}
-            {(query || tags.length != 0) && (
+            {(query || tags.size != 0) && (
                 <div className='flex items-baseline gap-1'>
                     {'Showing search results for: '}
                     <div className='font-semibold'>{query}</div>
-                    <TagsList tags={tags}></TagsList>
+                    <TagsList
+                        tags={Array.from(tags)}
+                        onRemove={removeTag}
+                    ></TagsList>
                     <div
-                        onClick={() => router.push('/blog')}
+                        onClick={clearResults}
                         className='cursor-pointer  text-sm text-red-800 underline hover:text-red-600'
                     >
                         clear results
