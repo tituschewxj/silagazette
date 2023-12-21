@@ -3,9 +3,11 @@
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import PostPreview from './PostPreview';
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
+import { SearchData } from '@/types/SearchData';
+import SearchBar from './SearchBar';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();
 const SearchContainer = (props: {
@@ -17,9 +19,9 @@ const SearchContainer = (props: {
     const query = searchParams.get('query');
 
     const router = useRouter();
-    const [searchData, setSearchData] = useState({
+    const [searchData, setSearchData] = useState<SearchData>({
         query: '',
-        tags: '',
+        tags: [],
     });
     const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
     const searchIndex = useMemo(
@@ -84,7 +86,7 @@ const SearchContainer = (props: {
         e.preventDefault();
         if (searchData.query.trim() == '') return;
         router.push(`/blog?query=${searchData.query.trim()}`);
-        setSearchData({ query: '', tags: '' });
+        setSearchData({ query: '', tags: [...searchData.tags] });
     };
 
     const clearResults = () => {
@@ -101,27 +103,22 @@ const SearchContainer = (props: {
         );
     };
 
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchData({
+            ...searchData,
+            query: e.target.value,
+        });
+    };
+
     return (
         <>
-            {/* Search Bar */}
-            <div className='my-8 rounded-lg border p-8 shadow-md'>
-                {/* Search: {search} */}
-                <form className='group relative' onSubmit={handleSubmit}>
-                    <input
-                        type='text'
-                        placeholder='Search'
-                        onChange={(e) =>
-                            setSearchData({
-                                ...searchData,
-                                query: e.target.value,
-                            })
-                        }
-                        value={searchData.query}
-                        className=' w-full cursor-pointer rounded-full bg-gray-100 p-2 pl-9 text-sm text-gray-700 shadow-inner outline-none ring-1 ring-inset ring-gray-300 transition duration-200 placeholder:text-gray-400  hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-inset focus:ring-red-600'
-                    ></input>
-                    <i className=' bx bx-search pointer-events-none absolute inset-2 ml-1 text-xl text-slate-400 '></i>
-                </form>
-            </div>
+            <SearchBar
+                handleSubmit={handleSubmit}
+                handleChange={handleChange}
+                searchData={searchData}
+                allTags={props.allTags}
+            />
+
             {/* Search results */}
             {(query || tags.size != 0) && (
                 <div className='flex items-baseline gap-1'>
