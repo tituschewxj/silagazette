@@ -3,7 +3,7 @@
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import PostPreview from './PostPreview';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
 
@@ -23,6 +23,30 @@ const SearchContainer = (props: {
         tags: '',
     });
     const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
+    const searchIndex = useMemo(
+        () =>
+            // FIXME: workaround that generates the search index on runtime
+            elasticlunr(function () {
+                // @ts-ignore
+                this.addField('title');
+                // @ts-ignore
+                this.addField('subtitle');
+                // @ts-ignore
+                this.addField('content');
+                // @ts-ignore
+                this.setRef('id');
+                this.saveDocument(false);
+                props.posts.forEach((post, idx) =>
+                    this.addDoc({
+                        id: idx,
+                        title: post.data.title,
+                        subtitle: post.data.subtitle,
+                        content: post.content,
+                    }),
+                );
+            }),
+        [],
+    );
 
     useEffect(() => {
         // Sorting by date
@@ -34,34 +58,7 @@ const SearchContainer = (props: {
             }
         });
 
-        // Filtering based on tags
-        const filteredPostsData = sortedPostsData.filter((post: PostData) => {
-            if (tagsSet.size == 0) return true;
-            return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
-        });
-
         // Perform search
-        // FIXME: workaround that generates the search index on runtime
-        const searchIndex = elasticlunr(function () {
-            // @ts-ignore
-            this.addField('title');
-            // @ts-ignore
-            this.addField('subtitle');
-            // @ts-ignore
-            this.addField('content');
-            // @ts-ignore
-            this.setRef('id');
-            this.saveDocument(false);
-            filteredPostsData.forEach((post, idx) =>
-                this.addDoc({
-                    id: idx,
-                    title: post.data.title,
-                    subtitle: post.data.subtitle,
-                    content: post.content,
-                }),
-            );
-        });
-
         const searchResults = query
             ? searchIndex
                   .search(query, {
@@ -71,11 +68,17 @@ const SearchContainer = (props: {
                           content: { boost: 1 },
                       },
                   })
-                  .map((i) => filteredPostsData[parseInt(i.ref)])
-            : undefined;
+                  .map((i) => sortedPostsData[parseInt(i.ref)])
+            : sortedPostsData;
+
+        // Filtering based on tags
+        const filteredPostsData = searchResults.filter((post: PostData) => {
+            if (tagsSet.size == 0) return true;
+            return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
+        });
 
         // Generate post previews
-        setPostPreviews(searchResults ? searchResults : filteredPostsData);
+        setPostPreviews(filteredPostsData);
     }, [query]);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
