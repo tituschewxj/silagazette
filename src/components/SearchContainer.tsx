@@ -3,7 +3,7 @@
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import PostPreview from './PostPreview';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
 
@@ -15,67 +15,67 @@ const SearchContainer = (props: { posts: PostData[] }) => {
         query: '',
         tags: '',
     });
+    const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
 
     // Search params
     const tags = searchParams.getAll('tags');
     const tagsSet = new Set(tags);
     const query = searchParams.get('query');
-
     // Sorting
-    const sortedPostsData = props.posts.sort((a: PostData, b: PostData) => {
-        if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
-            return 1;
-        } else {
-            return -1;
-        }
-    });
 
-    // Filtering based on search params
-    const filteredPostsData = sortedPostsData.filter((post: PostData) => {
-        if (tagsSet.size == 0) return true;
-        return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
-    });
+    useEffect(() => {
+        console.log('test');
+        const sortedPostsData = props.posts.sort((a: PostData, b: PostData) => {
+            if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
 
-    // Perform search
-    // FIXME: workaround that generates the search index on runtime
-    const searchIndex = elasticlunr(function () {
-        // @ts-ignore
-        this.addField('title');
-        // @ts-ignore
-        this.addField('subtitle');
-        // @ts-ignore
-        this.addField('content');
-        // @ts-ignore
-        this.setRef('id');
-        this.saveDocument(false);
-        filteredPostsData.forEach((post, idx) =>
-            this.addDoc({
-                id: idx,
-                title: post.data.title,
-                subtitle: post.data.subtitle,
-                content: post.content,
-            }),
-        );
-    });
+        // Filtering based on search params
+        const filteredPostsData = sortedPostsData.filter((post: PostData) => {
+            if (tagsSet.size == 0) return true;
+            return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
+        });
 
-    const searchResults = query
-        ? searchIndex
-              .search(query, {
-                  fields: {
-                      title: { boost: 2 },
-                      subtitle: { boost: 1 },
-                      content: { boost: 1 },
-                  },
-              })
-              .map((i) => filteredPostsData[parseInt(i.ref)])
-        : undefined;
+        // Perform search
+        // FIXME: workaround that generates the search index on runtime
+        const searchIndex = elasticlunr(function () {
+            // @ts-ignore
+            this.addField('title');
+            // @ts-ignore
+            this.addField('subtitle');
+            // @ts-ignore
+            this.addField('content');
+            // @ts-ignore
+            this.setRef('id');
+            this.saveDocument(false);
+            filteredPostsData.forEach((post, idx) =>
+                this.addDoc({
+                    id: idx,
+                    title: post.data.title,
+                    subtitle: post.data.subtitle,
+                    content: post.content,
+                }),
+            );
+        });
 
-    // Generate post previews
-    const postPreviews = (
-        searchResults ? searchResults : filteredPostsData
-    ).map((post) => {
-        return <PostPreview key={post.data.slug} post={post} />;
-    });
+        const searchResults = query
+            ? searchIndex
+                  .search(query, {
+                      fields: {
+                          title: { boost: 2 },
+                          subtitle: { boost: 1 },
+                          content: { boost: 1 },
+                      },
+                  })
+                  .map((i) => filteredPostsData[parseInt(i.ref)])
+            : undefined;
+
+        // Generate post previews
+        setPostPreviews(searchResults ? searchResults : filteredPostsData);
+    }, [query]);
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -119,7 +119,9 @@ const SearchContainer = (props: { posts: PostData[] }) => {
                     </div>
                 </div>
             )}
-            {postPreviews}
+            {postPreviews?.map((post) => (
+                <PostPreview key={post.data.slug} post={post} />
+            ))}
         </>
     );
 };
