@@ -1,31 +1,28 @@
 import ContentArea from '@/components/ContentArea';
-import { PostData, PostMetadata } from '@/types/PostMetadata';
+import { PostData } from '@/types/PostMetadata';
 import PostPreview from '@/components/PostPreview';
 import getPostsData from '@/components/getPostsData';
 import Button from '@/components/Button';
 
 export default function HomePage() {
-    const postMetadata = getPostsData();
+    const postsData = getPostsData();
     // Sort by date
-    const sortedPostsMetadata = postMetadata.sort(
-        (a: PostData, b: PostData) => {
-            if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
-                return 1;
-            } else {
-                return -1;
-            }
-        },
-    );
+    const sortedPostsMetadata = postsData.sort((a: PostData, b: PostData) => {
+        if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
     const sortedFilteredPostsMetadata = sortedPostsMetadata.slice(0, 3);
     const postPreviews = sortedFilteredPostsMetadata.map((post) => {
-        return <PostPreview key={post.data.slug} metadata={post.data} />;
+        return <PostPreview key={post.data.slug} post={post} />;
     });
 
     return (
         <main>
             {/* Hero section */}
-            {/* NOTE: Could add background image */}
-            <section className='flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white shadow-md '>
+            <section className='relative flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white shadow-md '>
                 <div className='container mx-auto text-center'>
                     <h1 className='mb-4 text-4xl font-bold leading-tight'>
                         Welcome to the Singapore International Law Gazette
@@ -35,8 +32,8 @@ export default function HomePage() {
                     </p>
                     <Button href='/blog'>Get started</Button>
                 </div>
+                <div className='pointer-events-none absolute inset-0 bg-[url("/law_items_bg.jpeg")] bg-cover opacity-10 blur-sm'></div>
             </section>
-
             <ContentArea>
                 <h2 className='mb-4 text-3xl font-bold'>Latest Posts</h2>
                 {postPreviews}
