@@ -35,6 +35,17 @@ export const getPostsData = (): PostData[] => {
     return allPostsData;
 };
 
+var allTags: Set<string> | null = null;
+export const getAllTags = (): Set<string> => {
+    if (allTags != null) return allTags;
+    allTags = new Set();
+    const postsData = getPostsData();
+    postsData.forEach((post) =>
+        post.data.tags.forEach((tag) => allTags?.add(tag)),
+    );
+    return allTags;
+};
+
 // Checks if the post exists and is not hidden.
 export const isValidPost = (slug: string): boolean => {
     const posts = getPostsData();

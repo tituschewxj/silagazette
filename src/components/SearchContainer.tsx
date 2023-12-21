@@ -8,8 +8,15 @@ import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();
-const SearchContainer = (props: { posts: PostData[] }) => {
+const SearchContainer = (props: {
+    posts: PostData[];
+    allTags: Set<string>;
+}) => {
     const searchParams = useSearchParams();
+    const tags = searchParams.getAll('tags');
+    const tagsSet = new Set(tags);
+    const query = searchParams.get('query');
+
     const router = useRouter();
     const [searchData, setSearchData] = useState({
         query: '',
@@ -17,13 +24,8 @@ const SearchContainer = (props: { posts: PostData[] }) => {
     });
     const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
 
-    // Search params
-    const tags = searchParams.getAll('tags');
-    const tagsSet = new Set(tags);
-    const query = searchParams.get('query');
-    // Sorting
-
     useEffect(() => {
+        // Sorting by date
         const sortedPostsData = props.posts.sort((a: PostData, b: PostData) => {
             if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
                 return 1;
@@ -32,7 +34,7 @@ const SearchContainer = (props: { posts: PostData[] }) => {
             }
         });
 
-        // Filtering based on search params
+        // Filtering based on tags
         const filteredPostsData = sortedPostsData.filter((post: PostData) => {
             if (tagsSet.size == 0) return true;
             return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
