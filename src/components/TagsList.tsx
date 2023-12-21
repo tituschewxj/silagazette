@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Tag from './Tag';
 
 const TagsList = (props: { tags: string[] }) => {
     return (
@@ -6,11 +6,7 @@ const TagsList = (props: { tags: string[] }) => {
             {props.tags.map((tag: string) => {
                 return (
                     // TODO: Search by tags
-                    <Link href={`/blog?tag=${tag}`}>
-                        <div className='hover: m-1 rounded-lg border p-1 text-xs text-slate-800 shadow-sm hover:bg-gray-100'>
-                            {tag}
-                        </div>
-                    </Link>
+                    <Tag tag={tag}></Tag>
                 );
             })}
         </div>
