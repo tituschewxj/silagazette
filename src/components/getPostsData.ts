@@ -4,7 +4,10 @@ import fs from 'fs';
 import matter from 'gray-matter';
 
 // Get all the posts metadata from the posts folder.
-const getPostsData = (): PostData[] => {
+var allPostsData: PostData[] | null = null;
+export const getPostsData = (): PostData[] => {
+    if (allPostsData != null) return allPostsData;
+
     const folder = 'posts/';
     const files = fs.readdirSync(folder);
     const markdownPosts = files.filter((file) => file.endsWith('.md'));
@@ -28,8 +31,8 @@ const getPostsData = (): PostData[] => {
         };
     });
     const filteredPosts = posts.filter((post) => !post.data.hidden);
-
-    return filteredPosts;
+    allPostsData = filteredPosts;
+    return allPostsData;
 };
 
 // Checks if the post exists and is not hidden.
@@ -52,5 +55,3 @@ export const getPostData = (slug: string) => {
     }
     return filteredPosts[0];
 };
-
-export default getPostsData;

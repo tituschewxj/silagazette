@@ -1,5 +1,6 @@
 import Markdown from 'markdown-to-jsx';
-import getPostsData, {
+import {
+    getPostsData,
     getPostData,
     isValidPost,
 } from '@/components/getPostsData';

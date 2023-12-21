@@ -4,8 +4,8 @@ import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import PostPreview from './PostPreview';
 import { FormEvent, useState } from 'react';
-import Tag from './Tag';
 import TagsList from './TagsList';
+import elasticlunr from 'elasticlunr';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();
 const SearchContainer = (props: { posts: PostData[] }) => {
@@ -16,7 +16,7 @@ const SearchContainer = (props: { posts: PostData[] }) => {
         tags: '',
     });
 
-    // Search
+    // Search params
     const tags = searchParams.getAll('tags');
     const tagsSet = new Set(tags);
     const query = searchParams.get('query');
@@ -36,14 +36,51 @@ const SearchContainer = (props: { posts: PostData[] }) => {
         return post.data.tags.filter((tag) => tagsSet.has(tag)).length != 0;
     });
 
+    // Perform search
+    // FIXME: workaround that generates the search index on runtime
+    const searchIndex = elasticlunr(function () {
+        // @ts-ignore
+        this.addField('title');
+        // @ts-ignore
+        this.addField('subtitle');
+        // @ts-ignore
+        this.addField('content');
+        // @ts-ignore
+        this.setRef('id');
+        this.saveDocument(false);
+        filteredPostsData.forEach((post, idx) =>
+            this.addDoc({
+                id: idx,
+                title: post.data.title,
+                subtitle: post.data.subtitle,
+                content: post.content,
+            }),
+        );
+    });
+
+    const searchResults = query
+        ? searchIndex
+              .search(query, {
+                  fields: {
+                      title: { boost: 2 },
+                      subtitle: { boost: 1 },
+                      content: { boost: 1 },
+                  },
+              })
+              .map((i) => filteredPostsData[parseInt(i.ref)])
+        : undefined;
+
     // Generate post previews
-    const postPreviews = filteredPostsData.map((post) => {
+    const postPreviews = (
+        searchResults ? searchResults : filteredPostsData
+    ).map((post) => {
         return <PostPreview key={post.data.slug} post={post} />;
     });
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        router.push(`/blog?query=${searchData.query}`);
+        if (searchData.query.trim() == '') return;
+        router.push(`/blog?query=${searchData.query.trim()}`);
         setSearchData({ query: '', tags: '' });
     };
 
@@ -56,7 +93,6 @@ const SearchContainer = (props: { posts: PostData[] }) => {
                     <input
                         type='text'
                         placeholder='Search'
-                        required
                         onChange={(e) =>
                             setSearchData({
                                 ...searchData,
@@ -64,14 +100,25 @@ const SearchContainer = (props: { posts: PostData[] }) => {
                             })
                         }
                         value={searchData.query}
-                        className=' w-full rounded-full bg-gray-100 p-2 pl-9 text-sm text-gray-700 shadow-inner outline-none ring-1 ring-inset ring-gray-300 transition duration-200 placeholder:text-gray-400  hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-inset focus:ring-red-600'
+                        className=' w-full cursor-pointer rounded-full bg-gray-100 p-2 pl-9 text-sm text-gray-700 shadow-inner outline-none ring-1 ring-inset ring-gray-300 transition duration-200 placeholder:text-gray-400  hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-inset focus:ring-red-600'
                     ></input>
                     <i className=' bx bx-search pointer-events-none absolute inset-2 ml-1 text-xl text-slate-400 '></i>
                 </form>
             </div>
             {/* Search results */}
-            <div className='font-semibold'>{query}</div>
-            <TagsList tags={tags}></TagsList>
+            {(query || tags.length != 0) && (
+                <div className='flex items-baseline gap-1'>
+                    {'Showing search results for: '}
+                    <div className='font-semibold'>{query}</div>
+                    <TagsList tags={tags}></TagsList>
+                    <div
+                        onClick={() => router.push('/blog')}
+                        className='cursor-pointer  text-sm text-red-800 underline hover:text-red-600'
+                    >
+                        clear results
+                    </div>
+                </div>
+            )}
             {postPreviews}
         </>
     );

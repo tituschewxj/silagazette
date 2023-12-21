@@ -6,7 +6,7 @@ const TagsList = (props: { tags: string[] }) => {
             {props.tags.map((tag: string) => {
                 return (
                     // TODO: Search by tags
-                    <Tag tag={tag}></Tag>
+                    <Tag key={tag} tag={tag}></Tag>
                 );
             })}
         </div>
