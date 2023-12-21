@@ -23,7 +23,8 @@ export default function HomePage() {
         <main>
             {/* Hero section */}
             <section className='relative flex h-screen items-center bg-gradient-to-r from-rose-800 via-red-800 to-red-900 text-white shadow-md '>
-                <div className='container mx-auto text-center'>
+                <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/law_items_bg.jpeg")] bg-cover opacity-10 blur-sm'></div>
+                <div className='container z-10 mx-auto text-center'>
                     <h1 className='mb-4 text-4xl font-bold leading-tight'>
                         Welcome to the Singapore International Law Gazette
                     </h1>
@@ -32,7 +33,6 @@ export default function HomePage() {
                     </p>
                     <Button href='/blog'>Get started</Button>
                 </div>
-                <div className='pointer-events-none absolute inset-0 bg-[url("/law_items_bg.jpeg")] bg-cover opacity-10 blur-sm'></div>
             </section>
             <ContentArea>
                 <h2 className='mb-4 text-3xl font-bold'>Latest Posts</h2>
