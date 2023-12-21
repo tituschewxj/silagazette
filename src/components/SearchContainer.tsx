@@ -24,7 +24,6 @@ const SearchContainer = (props: { posts: PostData[] }) => {
     // Sorting
 
     useEffect(() => {
-        console.log('test');
         const sortedPostsData = props.posts.sort((a: PostData, b: PostData) => {
             if (Date.parse(a.data.date) < Date.parse(b.data.date)) {
                 return 1;
