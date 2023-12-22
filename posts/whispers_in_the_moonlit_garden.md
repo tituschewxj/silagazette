@@ -21,7 +21,7 @@ At the heart of the Moonlit Garden bloomed the Nightblossom—a rare flower that
 
 Amelia, drawn to the mystical allure of the Moonlit Garden, embarked on a journey to uncover its secrets. Guided by the whispers of the wind and the silvery glow of the moon, she reached the Nightblossom's resting place. As the midnight hour approached, Amelia performed the Moonlit Ritual—an ancient dance that invoked the flower's enchantment.
 
-![Moonlit Garden](images/moonlit_garden.jpg)
+![Moonlit Garden](/images/template_1.jpeg)
 
 ## Chapter 4: Midnight Whispers
 

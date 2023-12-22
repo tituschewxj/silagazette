@@ -15,7 +15,7 @@ In the vast expanse of the cosmos, where galaxies painted the cosmic canvas with
 
 The Celestial Nomad, guided by the ethereal hum of the universe, embarked on a journey towards the vibrant Veil Nebula. This cosmic tapestry of interstellar gas and dust whispered secrets of creation. As the Stardust Voyager approached, the nebula beckoned with a mesmerizing dance of celestial lights.
 
-![Veil Nebula](images/veil_nebula.jpg)
+![Veil Nebula](/images/template_1.jpeg)
 
 ## Chapter 2: The Quasar's Lament
 

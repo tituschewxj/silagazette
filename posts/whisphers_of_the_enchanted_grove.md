@@ -21,7 +21,7 @@ A young wanderer named Elara, with eyes full of curiosity and a heart attuned to
 
 Guided by the soft whispers of the grove, Elara learned to decipher the language of leaves. Each rustle told a story—a chronicle of seasons changing, creatures playing, and the eons-old dance between the earth and the sky. Elara, entranced, felt a deep connection to the pulse of nature.
 
-![Whispering Willow](images/whispering_willow.jpg)
+![Whispering Willow](/images/template_1.jpeg)
 
 ## Chapter 4: The Guardian's Tale
 

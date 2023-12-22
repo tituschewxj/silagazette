@@ -21,7 +21,7 @@ Elena, a young seafarer with an insatiable curiosity, longed to unravel the myst
 
 As Elena sailed further into the Enigmatic Sea, the rhythmic lull of the ocean became a melody, and the waves seemed to carry the ethereal strains of the Siren's Song. Mesmerized, Elena followed the alluring melody, her heart swaying to the maritime serenade that echoed across the sea.
 
-![Enigmatic Sea](images/enigmatic_sea.jpg)
+![Enigmatic Sea](/images/template_1.jpeg)
 
 ## Chapter 4: Whispering Shores
 

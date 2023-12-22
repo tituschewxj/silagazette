@@ -15,7 +15,7 @@ In the distant reaches of the cosmos, where galaxies danced to the rhythm of sta
 
 One fateful night, the Maestro, an ethereal being woven from the fabric of the cosmos, awoke from eons of cosmic slumber. With a sweep of celestial tendrils, the Maestro conducted the galaxies into a magnificent symphony of light and sound. Each note reverberated through the vastness of space, creating a cosmic tapestry that pulsed with energy.
 
-![Celestial Symphony](/images/celestial_symphony.jpg)
+![Celestial Symphony](/images/template_1.jpeg)
 
 ## Chapter 2: The Lost Constellation
 
@@ -31,7 +31,7 @@ Orion, equipped with a cosmic compass and guided by the wisdom of ancient star m
 
 Orion's odyssey led him to the heart of a galactic whirlpool, where the lost constellation shimmered in disarray. With the cosmic compass in hand, Orion conducted a symphony of restoration, aligning the wayward stars and harmonizing their frequencies. The celestial beings joined in, weaving their energies to mend the cosmic fabric.
 
-![Harmonic Convergence](/images/harmonic_convergence.jpg)
+![Harmonic Convergence](/images/template_2.jpeg)
 
 ## Chapter 5: The Maestro's Gratitude
 

@@ -46,7 +46,7 @@ At the end of the labyrinth, Aiden faced the Guardian of Time—a majestic creat
 
 As Aiden progressed, he encountered the Veil of Shadows, a mysterious barrier that guarded the heart of Eldoria. The veil whispered ancient incantations, tempting him with forgotten desires. A table with cryptic inscriptions stood before the veil[^5^]. Aiden, remembering the lessons of the council, deciphered the inscriptions and lifted the veil, revealing a realm of pure magic.
 
-![Veil of Shadows](/images/veil_of_shadows.jpg)
+![Veil of Shadows](/images/template_1.jpeg)
 
 But the journey was far from over. The amulet pulsed with energy, signaling the approach of an imminent threat.
 
@@ -86,7 +86,7 @@ Aiden chronicled his adventures in a magical tome, the Chronicles of Eldoria, a 
 
 [^8^]: The Chronicles of Eldoria became a treasured tome, passing down the enchanting legacy through generations.
 
-![Chronicles of Eldoria](/images/chronicles_of_eldoria.jpg)
+![Chronicles of Eldoria](/images/template_2.jpeg)
 
 Eldoria flourished under Aiden's watchful gaze. The enchanted forest became a sanctuary for those who sought the beauty of magic and the wisdom of the ancient trees. The story of Aiden, the sorcerer who bridged realms, echoed through the rustling leaves and the babbling brooks, ensuring that the legacy of Eldoria would endure for all time.
 
@@ -106,7 +106,7 @@ As centuries passed, Aiden felt the weight of time upon him. In a solemn ceremon
 
 Elara, inheriting Aiden's legacy, embarked on her own journey through Eldoria. New challenges and mysteries awaited, as the enchanted forest revealed itself in ever-changing forms. The table of runes, now an artifact of profound significance, guided Elara to realms yet undiscovered.
 
-![Passing of the Amulet](/images/passing_of_the_amulet.jpg)
+![Passing of the Amulet](/images/template_3.jpeg)
 
 ## Epilogue: Echoes of Enchantment
 
