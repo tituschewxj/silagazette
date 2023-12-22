@@ -14,7 +14,7 @@ const PostHeader = (props: { slug: string }) => {
                 Published on {getFormattedDate(post.data.date)}
             </div>
             <div className='text-sm text-slate-500'>By {post.data.author}</div>
-            <TagsList tags={post.data.tags} />
+            <TagsList tags={post.data.tags} icon />
         </>
     );
 };

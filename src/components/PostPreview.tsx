@@ -22,7 +22,7 @@ const PostPreview = (props: { post: PostData }) => {
                     By {post.data.author}
                 </div>
                 {/* NOTE: cannot nest anchor tags */}
-                <TagsList tags={post.data.tags} />
+                <TagsList tags={post.data.tags} icon />
                 <Link
                     className='absolute inset-0 h-full w-full'
                     href={`/blog/${slug}`}

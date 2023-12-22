@@ -6,8 +6,8 @@ import PostPreview from './PostPreview';
 import { useEffect, useMemo, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
-import { SearchData } from '@/types/SearchData';
 import SearchBar from './SearchBar';
+import getTagsParams from './getTagsParams';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();
 const SearchContainer = (props: {
@@ -84,11 +84,16 @@ const SearchContainer = (props: {
 
     const removeTag = (tag: string) => {
         tags.delete(tag);
+        if (tags.size == 0 && query == null) {
+            router.push('/blog');
+            return;
+        }
+        const tagsParams = getTagsParams(Array.from(tags));
+
         router.push(
-            `blog
-            ${query ? `?query=${query}` : ''}
-            ${tags.size != 0 ? '&&' : ''}
-            ${Array.from(tags).map((tag) => `tags=${tag}`)}`,
+            `/blog?${query ? `query=${query}` : ''}${
+                tags.size != 0 && query ? '&&' : ''
+            }${tagsParams}`,
         );
     };
 
