@@ -26,7 +26,7 @@ const PostPage = (props: { params: PostMetadata }) => {
     return isValidPost(slug) ? (
         <ContentArea>
             <PostHeader {...metadata} />
-            <article className='prose'>
+            <article className='prose prose-slate'>
                 <Markdown>{getPostData(slug).content}</Markdown>
             </article>
         </ContentArea>
