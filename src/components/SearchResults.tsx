@@ -22,10 +22,18 @@ const SearchResults = (props: {
     }, [props.filteredPosts.toString(), props.page]);
 
     return (
-        <div className='flex flex-grow flex-col'>
-            {postPreviews?.map((post) => (
-                <PostPreview key={post.data.slug} post={post} />
-            ))}
+        <div className='flex flex-grow flex-col items-stretch'>
+            {postPreviews.length == 0 ? (
+                <div className=' flex flex-grow items-center'>
+                    <div className='flex-grow text-center font-semibold'>
+                        No results
+                    </div>
+                </div>
+            ) : (
+                postPreviews?.map((post) => (
+                    <PostPreview key={post.data.slug} post={post} />
+                ))
+            )}
             {/* <div className='flex-grow'></div> */}
             <Paginate
                 firstPage={1}
