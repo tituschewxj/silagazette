@@ -8,7 +8,7 @@ const Paginate = (props: {
 }) => {
     return (
         props.firstPage != props.lastPage && (
-            <div className='mt-auto flex justify-center py-8'>
+            <div className='mt-auto flex justify-center py-4'>
                 <div className='flex flex-row -space-x-px rounded-lg text-sm shadow-md '>
                     {/* Previous page */}
                     {props.currentPage != props.firstPage && (
