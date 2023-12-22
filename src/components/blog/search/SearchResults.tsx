@@ -1,6 +1,6 @@
 import { PostData } from '@/types/PostMetadata';
-import Paginate from './Paginate';
-import PostPreview from './PostPreview';
+import Paginate from '../Paginate';
+import PostPreview from '../PostPreview';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { POSTS_PER_PAGE } from '@/constants';
 

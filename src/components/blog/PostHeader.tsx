@@ -1,6 +1,6 @@
-import TagsList from './TagsList';
-import getFormattedDate from './getFormattedDate';
-import { getPostData } from './getPostsData';
+import TagsList from './tags/TagsList';
+import getFormattedDate from '../functions/getFormattedDate';
+import { getPostData } from '../functions/getPostsData';
 
 const PostHeader = (props: { slug: string }) => {
     const post = getPostData(props.slug);

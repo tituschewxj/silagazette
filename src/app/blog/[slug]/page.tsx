@@ -3,9 +3,9 @@ import {
     getPostsData,
     getPostData,
     isValidPost,
-} from '@/components/getPostsData';
+} from '@/components/functions/getPostsData';
 import { PostData, PostMetadata } from '@/types/PostMetadata';
-import PostHeader from '@/components/PostHeader';
+import PostHeader from '@/components/blog/PostHeader';
 import ContentArea from '@/components/ContentArea';
 import { notFound } from 'next/navigation';
 

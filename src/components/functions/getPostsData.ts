@@ -1,4 +1,4 @@
-import { PostData, PostMetadata } from '../types/PostMetadata';
+import { PostData, PostMetadata } from '../../types/PostMetadata';
 import { PageNotFoundError } from 'next/dist/shared/lib/utils';
 import fs from 'fs';
 import matter from 'gray-matter';

@@ -3,10 +3,10 @@
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { SetStateAction, useEffect, useMemo, useState } from 'react';
-import TagsList from './TagsList';
+import TagsList from '../tags/TagsList';
 import elasticlunr from 'elasticlunr';
 import SearchBar from './SearchBar';
-import getTagsParams from './getTagsParams';
+import getTagsParams from '../../functions/getTagsParams';
 import SearchResults from './SearchResults';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();

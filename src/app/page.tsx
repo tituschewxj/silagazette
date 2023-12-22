@@ -1,7 +1,7 @@
 import ContentArea from '@/components/ContentArea';
 import { PostData } from '@/types/PostMetadata';
-import PostPreview from '@/components/PostPreview';
-import { getPostsData } from '@/components/getPostsData';
+import PostPreview from '@/components/blog/PostPreview';
+import { getPostsData } from '@/components/functions/getPostsData';
 import Button from '@/components/Button';
 
 export default function HomePage() {

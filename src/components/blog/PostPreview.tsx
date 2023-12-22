@@ -1,6 +1,6 @@
-import { PostData } from '../types/PostMetadata';
-import getFormattedDate from './getFormattedDate';
-import TagsList from './TagsList';
+import { PostData } from '../../types/PostMetadata';
+import getFormattedDate from '../functions/getFormattedDate';
+import TagsList from './tags/TagsList';
 import Link from 'next/link';
 
 const PostPreview = (props: { post: PostData }) => {

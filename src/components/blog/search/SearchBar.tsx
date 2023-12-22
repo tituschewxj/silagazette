@@ -1,5 +1,5 @@
 import { SearchData } from '@/types/SearchData';
-import TagsList from './TagsList';
+import TagsList from '../tags/TagsList';
 import {
     useEffect,
     useState,
@@ -9,7 +9,7 @@ import {
     Dispatch,
 } from 'react';
 import { useRouter } from 'next/navigation';
-import getTagsParams from './getTagsParams';
+import getTagsParams from '../../functions/getTagsParams';
 
 const SearchBar = (props: {
     allTags: Set<string>;
