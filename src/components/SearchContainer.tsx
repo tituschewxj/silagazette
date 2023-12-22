@@ -3,7 +3,7 @@
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
 import PostPreview from './PostPreview';
-import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
 import { SearchData } from '@/types/SearchData';
@@ -19,10 +19,6 @@ const SearchContainer = (props: {
     const query = searchParams.get('query');
 
     const router = useRouter();
-    const [searchData, setSearchData] = useState<SearchData>({
-        query: '',
-        tags: [],
-    });
     const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
     const searchIndex = useMemo(
         () =>
@@ -82,13 +78,6 @@ const SearchContainer = (props: {
         setPostPreviews(filteredPostsData);
     }, [query, tags.size]);
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (searchData.query.trim() == '') return;
-        router.push(`/blog?query=${searchData.query.trim()}`);
-        setSearchData({ query: '', tags: [...searchData.tags] });
-    };
-
     const clearResults = () => {
         router.push('/blog');
     };
@@ -103,23 +92,11 @@ const SearchContainer = (props: {
         );
     };
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearchData({
-            ...searchData,
-            query: e.target.value,
-        });
-    };
-
     return (
         <>
-            <SearchBar
-                handleSubmit={handleSubmit}
-                handleChange={handleChange}
-                searchData={searchData}
-                allTags={props.allTags}
-            />
+            <SearchBar allTags={props.allTags} />
 
-            {/* Search results */}
+            {/* Search identifier */}
             {(query || tags.size != 0) && (
                 <div className='flex items-baseline gap-1'>
                     {'Showing search results for: '}
@@ -136,6 +113,8 @@ const SearchContainer = (props: {
                     </div>
                 </div>
             )}
+
+            {/* Search results */}
             {postPreviews?.map((post) => (
                 <PostPreview key={post.data.slug} post={post} />
             ))}

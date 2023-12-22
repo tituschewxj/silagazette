@@ -16,7 +16,7 @@ const Tag = (props: {
     ) : props.onClick ? (
         <div
             onClick={() => props.onClick && props.onClick(props.tag)}
-            className='m-1 flex items-center rounded-lg border p-1 px-2 text-xs text-slate-800 shadow-sm transition duration-200 hover:bg-gray-100'
+            className='m-1 flex cursor-pointer items-center rounded-lg border p-1 px-2 text-xs text-slate-800 shadow-sm transition duration-200 hover:bg-gray-100'
         >
             <div>{props.tag}</div>
         </div>
