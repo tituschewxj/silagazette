@@ -2,24 +2,26 @@
 
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
-import PostPreview from './PostPreview';
-import { useEffect, useMemo, useState } from 'react';
+import { SetStateAction, useEffect, useMemo, useState } from 'react';
 import TagsList from './TagsList';
 import elasticlunr from 'elasticlunr';
 import SearchBar from './SearchBar';
 import getTagsParams from './getTagsParams';
+import SearchResults from './SearchResults';
 
 // SearchContainer is rendered on the client side, as it uses useSearchParams();
 const SearchContainer = (props: {
     posts: PostData[];
     allTags: Set<string>;
 }) => {
+    // Get search params
     const searchParams = useSearchParams();
     const tags = new Set(searchParams.getAll('tags'));
     const query = searchParams.get('query');
 
     const router = useRouter();
-    const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
+    const [filteredPosts, setFilteredPosts] = useState<PostData[]>([]);
+    const [page, setPage] = useState(1);
     const searchIndex = useMemo(
         () =>
             // FIXME: workaround that generates the search index on runtime
@@ -84,34 +86,35 @@ const SearchContainer = (props: {
                 );
             });
 
-        // Generate post previews
-        setPostPreviews(filteredPostsData);
+        setFilteredPosts(filteredPostsData);
     }, [query, Array.from(tags).toString()]);
 
     const clearResults = () => {
         router.push('/blog');
     };
 
+    // Remove tags from the search results options.
     const removeTag = (tag: string) => {
         tags.delete(tag);
+        router.push(getPageParams());
+    };
+
+    // Get search params without page info.
+    const getPageParams = (): string => {
         if (tags.size == 0 && query == null) {
-            router.push('/blog');
-            return;
+            return '/blog';
         }
         const tagsParams = getTagsParams(Array.from(tags));
-
-        router.push(
-            `/blog?${query ? `query=${query}` : ''}${
-                tags.size != 0 && query ? '&&' : ''
-            }${tagsParams}`,
-        );
+        return `/blog?${query ? `query=${query}` : ''}${
+            tags.size != 0 && query ? '&&' : ''
+        }${tagsParams}`;
     };
 
     return (
-        <>
-            <SearchBar allTags={props.allTags} />
+        <div className='flex h-full flex-col'>
+            <SearchBar allTags={props.allTags} setPage={setPage} />
 
-            {/* Search identifier */}
+            {/* Search params list */}
             {(query || tags.size != 0) && (
                 <div className='flex items-baseline gap-1'>
                     {'Showing search results for: '}
@@ -129,11 +132,12 @@ const SearchContainer = (props: {
                 </div>
             )}
 
-            {/* Search results */}
-            {postPreviews?.map((post) => (
-                <PostPreview key={post.data.slug} post={post} />
-            ))}
-        </>
+            <SearchResults
+                filteredPosts={filteredPosts}
+                page={page}
+                setPage={setPage}
+            ></SearchResults>
+        </div>
     );
 };
 
