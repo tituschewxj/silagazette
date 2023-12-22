@@ -9,7 +9,7 @@ const PostPreview = (props: { post: PostData }) => {
     const post = props.post;
     return (
         <>
-            <div className='group relative my-8 rounded-lg p-8 shadow-md transition duration-200 hover:bg-gray-100'>
+            <div className='group relative my-2 rounded-lg p-8 shadow-md transition duration-200 hover:bg-gray-100'>
                 <h1 className='font-serif text-2xl font-bold tracking-tight transition duration-150 group-hover:text-red-700 group-hover:underline'>
                     {post.data.title}
                 </h1>

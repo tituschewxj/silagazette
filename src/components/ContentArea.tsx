@@ -1,6 +1,8 @@
 const ContentArea = (props: { children?: React.ReactNode }) => {
     return (
-        <div className='mx-auto h-full max-w-2xl py-8 '>{props.children}</div>
+        <div className='relative mx-auto h-full max-w-2xl '>
+            {props.children}
+        </div>
     );
 };
 

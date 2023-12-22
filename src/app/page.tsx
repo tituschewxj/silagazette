@@ -35,7 +35,7 @@ export default function HomePage() {
                 </div>
             </section>
             <ContentArea>
-                <h2 className='mb-4 text-3xl font-bold'>Latest Posts</h2>
+                <h2 className='mb-4 mt-16 text-3xl font-bold'>Latest Posts</h2>
                 {postPreviews}
                 <Button href='/blog'>More posts</Button>
             </ContentArea>

@@ -22,7 +22,7 @@ const SearchResults = (props: {
     }, [props.filteredPosts.toString(), props.page]);
 
     return (
-        <div className='flex flex-grow flex-col items-stretch'>
+        <div className='flex flex-grow flex-col'>
             {postPreviews.length == 0 ? (
                 <div className=' flex flex-grow items-center'>
                     <div className='flex-grow text-center font-semibold'>
