@@ -68,15 +68,25 @@ const SearchContainer = (props: {
                   .map((i) => sortedPostsData[parseInt(i.ref)])
             : sortedPostsData;
 
-        // Filtering based on tags
-        const filteredPostsData = searchResults.filter((post: PostData) => {
-            if (tags.size == 0) return true;
-            return post.data.tags.filter((tag) => tags.has(tag)).length != 0;
-        });
+        const filteredPostsData = searchResults
+            // Sort by number of tag matches
+            .sort((a: PostData, b: PostData) => {
+                return (
+                    b.data.tags.filter((tag) => tags.has(tag)).length -
+                    a.data.tags.filter((tag) => tags.has(tag)).length
+                );
+            })
+            // Filtering based on tags
+            .filter((post: PostData) => {
+                if (tags.size == 0) return true;
+                return (
+                    post.data.tags.filter((tag) => tags.has(tag)).length != 0
+                );
+            });
 
         // Generate post previews
         setPostPreviews(filteredPostsData);
-    }, [query, tags.size]);
+    }, [query, Array.from(tags).toString()]);
 
     const clearResults = () => {
         router.push('/blog');

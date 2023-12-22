@@ -63,6 +63,7 @@ const SearchBar = (props: { allTags: Set<string> }) => {
             query: '',
             tags: [...searchData.tags, tag],
         });
+        document.getElementById('search-box')?.focus();
     };
     const removeTag = (tag: string) => {
         const removeIdx = searchData.tags.indexOf(tag);
@@ -76,14 +77,19 @@ const SearchBar = (props: { allTags: Set<string> }) => {
         <div className='my-8 rounded-lg border p-8 shadow-md'>
             <form className='group relative' onSubmit={handleSubmit}>
                 <input
+                    id='search-box'
                     type='text'
-                    placeholder='Search'
+                    placeholder={
+                        searchData.tags.length == 0
+                            ? 'Search'
+                            : 'Enter to search'
+                    }
                     onChange={handleChange}
                     value={searchData.query}
                     className='z-20 w-full cursor-pointer rounded-full bg-gray-100 p-2 pl-9 text-sm text-gray-700 shadow-inner outline-none ring-1 ring-inset ring-gray-300 transition duration-200  placeholder:text-gray-400 hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-inset focus:ring-red-600'
                 ></input>
                 <i className='bx bx-search pointer-events-none absolute inset-2 z-20 ml-1 text-xl text-slate-400 '></i>
-                {/* Custom tag list */}
+
                 <TagsList
                     tags={searchData.tags}
                     onRemove={removeTag}
@@ -94,12 +100,15 @@ const SearchBar = (props: { allTags: Set<string> }) => {
                     hidden={dropdownTags.length == 0}
                     className='invisible relative hover:visible group-focus-within:visible'
                 >
-                    <div className='absolute top-2 w-full rounded-3xl border bg-white p-1 shadow-lg '>
+                    <div className='absolute top-2 flex w-full flex-row items-center  rounded-3xl border bg-white p-1 shadow-lg'>
                         <TagsList
                             tags={dropdownTags}
                             onClick={selectTag}
                             icon
                         ></TagsList>
+                        <div className='text-sm text-slate-400'>
+                            - select tags
+                        </div>
                     </div>
                 </div>
             </form>
