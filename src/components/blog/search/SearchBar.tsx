@@ -92,8 +92,9 @@ const SearchBar = (props: {
                     placeholder={
                         searchData.tags.length == 0
                             ? 'Search'
-                            : 'Enter to search'
+                            : 'Enter to search with tags'
                     }
+                    autoComplete='off'
                     onChange={handleChange}
                     value={searchData.query}
                     className='z-20 w-full cursor-pointer rounded-full bg-gray-100 p-2 pl-9 text-sm text-gray-700 shadow-inner outline-none ring-1 ring-inset ring-gray-300 transition duration-200  placeholder:text-gray-400 hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-inset focus:ring-red-600'

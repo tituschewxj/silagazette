@@ -21,12 +21,17 @@ const PostPreview = (props: { post: PostData }) => {
                 <div className='text-sm text-slate-500'>
                     By {post.data.author}
                 </div>
-                {/* NOTE: cannot nest anchor tags */}
-                <TagsList tags={post.data.tags} icon />
                 <Link
                     className='absolute inset-0 h-full w-full'
                     href={`/blog/${slug}`}
                 ></Link>
+
+                {/* Tags */}
+                <div className='absolute z-20'>
+                    <TagsList tags={post.data.tags} icon />
+                </div>
+                {/* Empty div for absolute elements: tags */}
+                <div className='pt-8'></div>
             </div>
         </>
     );

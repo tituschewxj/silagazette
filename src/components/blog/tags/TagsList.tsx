@@ -7,7 +7,7 @@ const TagsList = (props: {
     onClick?: (tag: string) => void;
 }) => {
     return (
-        <div className='flex flex-row flex-wrap items-center '>
+        <div className='flex flex-row flex-wrap items-center'>
             {props.icon && (
                 <i className='bx bx-tag pl-2 text-lg text-slate-400'></i>
             )}
