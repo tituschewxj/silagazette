@@ -3,6 +3,7 @@ import './globals.css';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { Noto_Serif } from 'next/font/google';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
     title: 'Singapore International Law Gazette',
@@ -24,6 +25,20 @@ export default function RootLayout({
                     rel='stylesheet'
                 />
             </head>
+            {/* <!-- Google tag (gtag.js) --> */}
+            <Script
+                async
+                src='https://www.googletagmanager.com/gtag/js?id=G-6N2ZDYFFJV'
+            />
+            <Script id='google-analytics'>
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-6N2ZDYFFJV');
+                `}
+            </Script>
             <body className={`${font.className} flex min-h-screen flex-col`}>
                 <Header />
                 {/* TODO: Nav Bar */}
