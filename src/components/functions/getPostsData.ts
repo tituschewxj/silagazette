@@ -20,6 +20,7 @@ export const getPostsData = (): PostData[] => {
             title: matterResults.data.title,
             subtitle: matterResults.data.subtitle,
             author: matterResults.data.author,
+            author_link: matterResults.data.author_link,
             date: matterResults.data.date,
             tags: matterResults.data.tags,
             hidden: matterResults.data.hidden,

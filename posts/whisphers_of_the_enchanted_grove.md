@@ -2,6 +2,7 @@
 title: 'Whispers of the Enchanted Grove'
 subtitle: "A Tale of Nature's Secrets"
 author: 'Sylvan Weaver'
+author_link: ''
 date: 'April 10, 2024'
 tags: [fantasy, nature, mystery]
 hidden: false

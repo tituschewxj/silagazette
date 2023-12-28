@@ -2,6 +2,7 @@
 title: "Echoes of the Siren's Song"
 subtitle: 'A Maritime Melody'
 author: 'Marina Serenade'
+author_link: 'https://www.google.com/'
 date: 'January 15, 2025'
 tags: [fantasy, adventure, sea]
 hidden: false

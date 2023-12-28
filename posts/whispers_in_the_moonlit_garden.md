@@ -2,6 +2,7 @@
 title: 'Whispers in the Moonlit Garden'
 subtitle: 'A Tale of Midnight Secrets'
 author: 'Luna Mystica'
+author_link: ''
 date: 'November 8, 2024'
 tags: [fantasy, mystery, moonlight]
 hidden: false

@@ -2,6 +2,7 @@
 title: 'The Cogwheels of Eternity'
 subtitle: 'A Steampunk Odyssey'
 author: 'Hazel Gearsmith'
+author_link: 'https://www.google.com/'
 date: 'September 18, 2024'
 tags: [steampunk, adventure, clockwork]
 hidden: false

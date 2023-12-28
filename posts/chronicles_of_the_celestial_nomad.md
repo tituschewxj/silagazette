@@ -2,6 +2,7 @@
 title: 'Chronicles of the Celestial Nomad'
 subtitle: 'Journey Across the Cosmic Canvas'
 author: 'Stellar Voyager'
+author_link: 'https://www.google.com/'
 date: 'July 5, 2024'
 tags: [science fiction, space exploration, adventure]
 hidden: false

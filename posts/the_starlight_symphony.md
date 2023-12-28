@@ -2,6 +2,7 @@
 title: 'The Starlight Symphony'
 subtitle: 'A Cosmic Overture'
 author: 'Lyra Stellaris'
+author_link: ''
 date: 'February 14, 2024'
 tags: [science fiction, cosmic, adventure]
 hidden: false
