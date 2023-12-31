@@ -3,6 +3,7 @@ import getFormattedDate from '../functions/getFormattedDate';
 import TagsList from './tags/TagsList';
 import Link from 'next/link';
 import Image from 'next/image';
+import LinkText from '../LinkText';
 
 const PostPreview = (props: { post: PostData }) => {
     // TODO: add description for post
@@ -27,8 +28,14 @@ const PostPreview = (props: { post: PostData }) => {
                 <div className='text-sm text-slate-500'>
                     Published on {getFormattedDate(post.data.date)}
                 </div>
+
+                {/* Author */}
                 <div className='text-sm text-slate-500'>
-                    By {post.data.author}
+                    By&nbsp;
+                    <LinkText
+                        link={post.data.author_link}
+                        text={post.data.author}
+                    />
                 </div>
 
                 {/* Tags */}
