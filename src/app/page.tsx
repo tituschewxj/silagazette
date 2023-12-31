@@ -31,13 +31,17 @@ export default function HomePage() {
                     <p className='mb-8 text-lg md:text-xl'>
                         A brief description of what your website is about.
                     </p>
-                    <Button href='/blog'>Get started</Button>
+                    <Button href='/blog' className='mx-auto py-8 text-center'>
+                        Get started
+                    </Button>
                 </div>
             </section>
             <ContentArea>
                 <h2 className='mb-4 mt-16 text-3xl font-bold'>Latest Posts</h2>
                 {postPreviews}
-                <Button href='/blog'>More posts</Button>
+                <Button href='/blog' className='mx-auto py-8 text-center'>
+                    More posts
+                </Button>
             </ContentArea>
         </main>
     );
