@@ -5,6 +5,7 @@ author: 'Stellar Voyager'
 author_link: 'https://www.google.com/'
 date: 'July 5, 2024'
 tags: [science fiction, space exploration, adventure]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 

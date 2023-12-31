@@ -5,6 +5,7 @@ author: 'Marina Serenade'
 author_link: 'https://www.google.com/'
 date: 'January 15, 2025'
 tags: [fantasy, adventure, sea]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 

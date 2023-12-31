@@ -5,6 +5,7 @@ author: 'Lyra Stellaris'
 author_link: ''
 date: 'February 14, 2024'
 tags: [science fiction, cosmic, adventure]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 

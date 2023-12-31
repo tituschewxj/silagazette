@@ -5,6 +5,7 @@ export type PostMetadata = {
     author_link: string;
     date: string;
     tags: string[];
+    thumbnail_image: string;
     hidden: boolean;
     slug: string;
 };

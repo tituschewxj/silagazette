@@ -5,6 +5,7 @@ author: 'Hazel Gearsmith'
 author_link: 'https://www.google.com/'
 date: 'September 18, 2024'
 tags: [steampunk, adventure, clockwork]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 

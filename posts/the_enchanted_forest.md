@@ -5,6 +5,7 @@ author: 'Elena Magicweaver'
 author_link: 'https://www.google.com/'
 date: 'December 19, 2023'
 tags: [fantasy, adventure, magic]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 

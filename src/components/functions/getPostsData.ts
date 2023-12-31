@@ -23,6 +23,7 @@ export const getPostsData = (): PostData[] => {
             author_link: matterResults.data.author_link,
             date: matterResults.data.date,
             tags: matterResults.data.tags,
+            thumbnail_image: matterResults.data.thumbnail_image,
             hidden: matterResults.data.hidden,
             slug: fileName.replace('.md', ''),
         } as PostMetadata;

@@ -5,6 +5,7 @@ author: 'Luna Mystica'
 author_link: ''
 date: 'November 8, 2024'
 tags: [fantasy, mystery, moonlight]
+thumbnail_image: '/images/template_4.jpeg'
 hidden: false
 ---
 
