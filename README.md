@@ -3,6 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 -   It is statically generated site that uses markdown files to generate the blog-post pages at build-time, with customizable frontmatter.
 -   The search feature comprises of document search with [Elasticlunr.js](http://elasticlunr.com/) and searching by tags. The search results are paginated for ease of viewing.
 -   It uses [Tailwind](https://tailwindcss.com/) for it's user interface.
+-   Icons from [Boxicons](boxicons.com).
 
 ## Adding Files
 
