@@ -6,6 +6,7 @@ author_link: 'https://www.google.com/'
 date: 'September 18, 2024'
 tags: [steampunk, adventure, clockwork]
 thumbnail_image: '/images/template_4.jpeg'
+pdf_link: 'https://drive.google.com/file/d/1-8KXor2NEDMeaob1MymVI0_rzx91Kn_m/view'
 hidden: false
 ---
 

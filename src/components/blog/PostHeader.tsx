@@ -46,6 +46,16 @@ const PostHeader = (props: { slug: string }) => {
                     <i className='bx bxl-linkedin'></i>
                 </Button>
             </div>
+
+            {post.data.pdf_link && (
+                <Button
+                    className='py-5 text-sm'
+                    href={post.data.pdf_link}
+                    target='_blank'
+                >
+                    View PDF version of this article
+                </Button>
+            )}
         </>
     );
 };

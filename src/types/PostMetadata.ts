@@ -6,6 +6,7 @@ export type PostMetadata = {
     date: string;
     tags: string[];
     thumbnail_image: string;
+    pdf_link: string;
     hidden: boolean;
     slug: string;
 };
