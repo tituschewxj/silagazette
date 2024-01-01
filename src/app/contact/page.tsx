@@ -28,6 +28,7 @@ const ContactPage = () => {
                 </div>
             </div>
 
+            {/* TODO: Link to google form */}
             <TextSection heading=''>
                 Interested in writing for us? Have a piece you'd like to
                 publish? Drop us a message&nbsp;
