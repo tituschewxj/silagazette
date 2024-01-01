@@ -31,7 +31,10 @@ export default function HomePage() {
                     <p className='mb-8 text-lg md:text-xl'>
                         A brief description of what your website is about.
                     </p>
-                    <Button href='/blog' className='mx-auto py-8 text-center'>
+                    <Button
+                        href='/blog'
+                        className='mx-auto py-8 text-center transition duration-200 ease-in-out hover:scale-[1.05]'
+                    >
                         Get started
                     </Button>
                 </div>
