@@ -117,7 +117,7 @@ const SearchContainer = (props: {
             {/* Search params list */}
             {(query || tags.size != 0) && (
                 <div className='flex items-baseline gap-1 text-xs sm:text-sm'>
-                    {'Showing search results for: '}
+                    <div className='truncate'>Showing search results for:</div>
                     <div className='font-semibold'>{query}</div>
                     <TagsList
                         tags={Array.from(tags)}
@@ -125,7 +125,7 @@ const SearchContainer = (props: {
                     ></TagsList>
                     <div
                         onClick={clearResults}
-                        className='cursor-pointer text-red-800 underline hover:text-red-600'
+                        className='cursor-pointer truncate text-red-800 underline hover:text-red-600'
                     >
                         clear results
                     </div>
