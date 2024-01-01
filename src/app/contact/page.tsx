@@ -31,11 +31,7 @@ const ContactPage = () => {
             <TextSection heading=''>
                 Interested in writing for us? Have a piece you'd like to
                 publish? Drop us a message&nbsp;
-                <Link href='https://www.google.com/'>
-                    <div className='z-20 inline text-slate-500 underline transition duration-200 hover:text-red-700'>
-                        here
-                    </div>
-                </Link>
+                <LinkText link='https://www.google.com/' text='here'></LinkText>
                 !
             </TextSection>
         </ContentArea>

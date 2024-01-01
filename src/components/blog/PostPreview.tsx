@@ -35,6 +35,7 @@ const PostPreview = (props: { post: PostData }) => {
                     <LinkText
                         link={post.data.author_link}
                         text={post.data.author}
+                        className='absolute z-20'
                     />
                 </div>
 
