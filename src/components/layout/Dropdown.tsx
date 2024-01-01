@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Sidebar = (props: { onClick: () => void }) => {
+const Dropdown = (props: { onClick: () => void }) => {
     return (
         <nav className='absolute right-0 z-30 flex flex-col gap-8 rounded-xl bg-red-900 p-10'>
             <Link
@@ -35,4 +35,4 @@ const Sidebar = (props: { onClick: () => void }) => {
     );
 };
 
-export default Sidebar;
+export default Dropdown;

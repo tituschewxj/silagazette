@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Sidebar from './Sidebar';
+import Dropdown from './Dropdown';
 
 const Header = () => {
-    const [state, setState] = useState({ isSidebarActive: false });
+    const [state, setState] = useState({ isDropdownActive: false });
 
     return (
         <header className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 p-4 text-white shadow-md'>
@@ -32,30 +32,30 @@ const Header = () => {
                     {/* <i className='bx bx-search text-xl'></i> */}
                 </nav>
                 <div className='relative sm:hidden'>
-                    {state.isSidebarActive ? (
+                    {state.isDropdownActive ? (
                         <>
                             <i
                                 className='bx bx-x text-2xl'
                                 onClick={() =>
                                     setState({
-                                        isSidebarActive: false,
+                                        isDropdownActive: false,
                                     })
                                 }
                             ></i>
-                            <Sidebar
+                            <Dropdown
                                 onClick={() =>
                                     setState({
-                                        isSidebarActive: false,
+                                        isDropdownActive: false,
                                     })
                                 }
-                            ></Sidebar>
+                            ></Dropdown>
                         </>
                     ) : (
                         <i
                             className='bx bx-menu text-2xl'
                             onClick={() =>
                                 setState({
-                                    isSidebarActive: true,
+                                    isDropdownActive: true,
                                 })
                             }
                         ></i>
