@@ -42,7 +42,13 @@ const Header = () => {
                                     })
                                 }
                             ></i>
-                            <Sidebar></Sidebar>
+                            <Sidebar
+                                onClick={() =>
+                                    setState({
+                                        isSidebarActive: false,
+                                    })
+                                }
+                            ></Sidebar>
                         </>
                     ) : (
                         <i
