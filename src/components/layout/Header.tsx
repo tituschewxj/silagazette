@@ -6,7 +6,7 @@ const Header = () => {
             <div className='container mx-auto flex items-center justify-between'>
                 <Link href='/' className='flex items-center text-lg font-bold'>
                     <img className='h-10' src='/SMU ILA temporary logo.png' />
-                    <div className='px-2 font-serif text-3xl font-extralight tracking-tight'>
+                    <div className='hidden px-2 font-serif text-lg font-extralight tracking-tight sm:block md:text-2xl lg:text-3xl'>
                         Singapore International Law Gazette
                     </div>
                 </Link>
@@ -24,6 +24,8 @@ const Header = () => {
                     </Link>
                     {/* TODO: Search feature */}
                     {/* <i className='bx bx-search text-xl'></i> */}
+
+                    {/* TODO: Sidebar */}
                 </nav>
             </div>
         </header>

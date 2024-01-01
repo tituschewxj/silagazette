@@ -17,9 +17,9 @@ const PostPreview = (props: { post: PostData }) => {
                 alt='thumbnail-image'
                 width={1024}
                 height={1024}
-                className='w-1/4 rounded-l-lg bg-white object-cover filter transition duration-200 group-hover:saturate-[1.2]'
+                className='hidden w-1/4 rounded-l-lg bg-white object-cover filter transition duration-200 group-hover:saturate-[1.2] sm:block'
             ></Image>
-            <div className=' p-5'>
+            <div className='p-2 sm:p-5'>
                 <h1 className='font-serif text-2xl font-bold tracking-tight transition duration-150 group-hover:text-red-700 group-hover:underline'>
                     {post.data.title}
                 </h1>

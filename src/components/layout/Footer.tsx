@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className='mt-8 bg-gray-800 p-6 pt-14 text-white'>
-            <div className='container mx-auto flex items-center justify-around'>
+        <footer className='mt-6 bg-gray-800 p-6  text-white sm:mt-8 sm:pt-14'>
+            <div className='container mx-auto flex items-center justify-around gap-2'>
                 <div>
                     <h1 className='text-lg font-bold'>
                         SMU-ILA Student Chapter

@@ -9,7 +9,7 @@ const TagsList = (props: {
     return (
         <div className='flex flex-row flex-wrap items-center'>
             {props.icon && (
-                <i className='bx bx-tag pl-2 text-lg text-slate-400'></i>
+                <i className='bx bx-tag text-lg text-slate-400 sm:pl-2'></i>
             )}
             {props.tags.map((tag: string) => {
                 return (

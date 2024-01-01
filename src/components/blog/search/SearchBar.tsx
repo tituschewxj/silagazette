@@ -84,7 +84,7 @@ const SearchBar = (props: {
     };
 
     return (
-        <div className='my-8 rounded-lg border p-8 shadow-md'>
+        <div className='my-8 rounded-lg border p-3 shadow-md sm:p-8'>
             <form className='group relative' onSubmit={handleSubmit}>
                 <input
                     id='search-box'
@@ -117,7 +117,7 @@ const SearchBar = (props: {
                             onClick={selectTag}
                             icon
                         ></TagsList>
-                        <div className='text-sm text-slate-400'>
+                        <div className='hidden text-sm text-slate-400 sm:block'>
                             - select tags
                         </div>
                     </div>

@@ -22,6 +22,7 @@ const SearchResults = (props: {
     }, [props.filteredPosts.toString(), props.page]);
 
     return (
+        // TODO: add loading indicator
         <div className='flex flex-grow flex-col'>
             {postPreviews.length == 0 ? (
                 <div className=' flex flex-grow items-center'>
@@ -34,7 +35,7 @@ const SearchResults = (props: {
                     <PostPreview key={post.data.slug} post={post} />
                 ))
             )}
-            {/* <div className='flex-grow'></div> */}
+
             <Paginate
                 firstPage={1}
                 currentPage={props.page}
