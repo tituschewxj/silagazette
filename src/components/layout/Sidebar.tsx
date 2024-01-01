@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Sidebar = () => {
     return (
-        <nav className='shadow:xl absolute right-0 z-30 flex flex-col gap-8 rounded-xl  bg-red-900 p-10 sm:hidden'>
+        <nav className='absolute right-0 z-30 flex flex-col gap-8 rounded-xl bg-red-900 p-10'>
             <Link href='/' className='hover:text-gray-300'>
                 Home
             </Link>

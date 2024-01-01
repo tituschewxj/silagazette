@@ -33,14 +33,17 @@ const Header = () => {
                 </nav>
                 <div className='relative sm:hidden'>
                     {state.isSidebarActive ? (
-                        <i
-                            className='bx bx-x text-2xl'
-                            onClick={() =>
-                                setState({
-                                    isSidebarActive: false,
-                                })
-                            }
-                        ></i>
+                        <>
+                            <i
+                                className='bx bx-x text-2xl'
+                                onClick={() =>
+                                    setState({
+                                        isSidebarActive: false,
+                                    })
+                                }
+                            ></i>
+                            <Sidebar></Sidebar>
+                        </>
                     ) : (
                         <i
                             className='bx bx-menu text-2xl'
@@ -51,7 +54,6 @@ const Header = () => {
                             }
                         ></i>
                     )}
-                    {state.isSidebarActive && <Sidebar></Sidebar>}
                 </div>
             </div>
         </header>
