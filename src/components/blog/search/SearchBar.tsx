@@ -109,9 +109,9 @@ const SearchBar = (props: {
                 {/* Dropdown content */}
                 <div
                     hidden={dropdownTags.length == 0}
-                    className='invisible relative hover:visible group-focus-within:visible'
+                    className='invisible relative z-20 hover:visible group-focus-within:visible'
                 >
-                    <div className='absolute top-2 flex w-full flex-row items-center  rounded-3xl border bg-white p-1 shadow-lg'>
+                    <div className='absolute top-2 flex w-full flex-row items-center rounded-3xl border bg-white p-1 shadow-lg'>
                         <TagsList
                             tags={dropdownTags}
                             onClick={selectTag}

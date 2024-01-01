@@ -44,7 +44,9 @@ const PostPreview = (props: { post: PostData }) => {
                     <TagsList tags={post.data.tags} icon />
                 </div>
                 {/* Empty div for absolute elements: tags */}
-                <div className='pt-8'></div>
+                <div className='invisible'>
+                    <TagsList tags={post.data.tags} icon />
+                </div>
             </div>
             <Link
                 className='absolute inset-0 h-full w-full'
