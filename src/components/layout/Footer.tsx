@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className='mt-6 bg-gray-800 p-6  text-white sm:mt-8 sm:pt-14'>
-            <div className='container mx-auto flex items-center justify-around gap-2'>
+        <footer className='mt-6 bg-gray-800 p-6 text-white sm:mt-8 sm:pt-14'>
+            <div className='container mx-auto flex items-center justify-around gap-10'>
                 <div>
                     <h1 className='text-lg font-bold'>
                         SMU-ILA Student Chapter
@@ -27,7 +27,7 @@ const Footer = () => {
                     </p>
                     <p className='text-sm'>
                         <Link href='/about' className='hover:text-gray-300'>
-                            About Us
+                            About
                         </Link>
                     </p>
                     <p className='text-sm'>
@@ -38,7 +38,7 @@ const Footer = () => {
                 </div>
 
                 {/* Social media links */}
-                <div>
+                <div className='hidden sm:block'>
                     <p className='p-2 text-sm'>Follow Us:</p>
                     <div className='flex space-x-2 p-2'>
                         {/* TODO: Add links to social media */}
