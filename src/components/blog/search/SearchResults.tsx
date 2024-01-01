@@ -10,6 +10,7 @@ const SearchResults = (props: {
     setPage: Dispatch<SetStateAction<number>>;
 }) => {
     const [postPreviews, setPostPreviews] = useState<PostData[]>([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         // Paginate post previews by page
@@ -19,6 +20,7 @@ const SearchResults = (props: {
 
         // Generate post previews
         setPostPreviews(postPreviews);
+        setLoading(false);
     }, [props.filteredPosts.toString(), props.page]);
 
     return (
@@ -27,7 +29,11 @@ const SearchResults = (props: {
             {postPreviews.length == 0 ? (
                 <div className=' flex flex-grow items-center'>
                     <div className='flex-grow text-center font-semibold'>
-                        No results
+                        {loading ? (
+                            <i className='bx bx-loader-alt animate-spin text-2xl'></i>
+                        ) : (
+                            <>No results</>
+                        )}
                     </div>
                 </div>
             ) : (
