@@ -25,9 +25,9 @@ const SearchResults = (props: {
 
     return (
         // TODO: add loading indicator
-        <div className='flex flex-grow flex-col'>
-            {postPreviews.length == 0 ? (
-                <div className=' flex flex-grow items-center'>
+        <>
+            <div className='flex flex-grow flex-col'>
+                {postPreviews.length == 0 ? (
                     <div className='flex-grow text-center font-semibold'>
                         {loading ? (
                             <i className='bx bx-loader-alt animate-spin text-2xl'></i>
@@ -35,13 +35,13 @@ const SearchResults = (props: {
                             <>No results</>
                         )}
                     </div>
-                </div>
-            ) : (
-                postPreviews?.map((post) => (
-                    <PostPreview key={post.data.slug} post={post} />
-                ))
-            )}
-
+                ) : (
+                    postPreviews?.map((post) => (
+                        <PostPreview key={post.data.slug} post={post} />
+                    ))
+                )}
+            </div>
+            {/* TODO: move paginate outside of ContentArea */}
             <Paginate
                 firstPage={1}
                 currentPage={props.page}
@@ -52,7 +52,7 @@ const SearchResults = (props: {
                         : Math.ceil(props.filteredPosts.length / POSTS_PER_PAGE)
                 }
             ></Paginate>
-        </div>
+        </>
     );
 };
 

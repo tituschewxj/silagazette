@@ -1,20 +1,10 @@
 import { SearchData } from '@/types/SearchData';
 import TagsList from '../tags/TagsList';
-import {
-    useEffect,
-    useState,
-    FormEvent,
-    ChangeEvent,
-    SetStateAction,
-    Dispatch,
-} from 'react';
+import { useEffect, useState, FormEvent, ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import getTagsParams from '../../functions/getTagsParams';
 
-const SearchBar = (props: {
-    allTags: Set<string>;
-    setPage: Dispatch<SetStateAction<number>>;
-}) => {
+const SearchBar = (props: { allTags: Set<string> }) => {
     // FIXME: refactor perf
     // TODO: sort tags by frequency
     const router = useRouter();
@@ -58,7 +48,6 @@ const SearchBar = (props: {
                     : ''
             }${tagsParams}`,
         );
-        props.setPage(1);
         setSearchData({ query: '', tags: [] });
     };
 

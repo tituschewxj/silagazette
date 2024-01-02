@@ -2,7 +2,7 @@
 
 import { PostData } from '@/types/PostMetadata';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { SetStateAction, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import TagsList from '../tags/TagsList';
 import elasticlunr from 'elasticlunr';
 import SearchBar from './SearchBar';
@@ -87,6 +87,9 @@ const SearchContainer = (props: {
             });
 
         setFilteredPosts(filteredPostsData);
+
+        // Reset to first page after search
+        setPage(1);
     }, [query, Array.from(tags).toString()]);
 
     const clearResults = () => {
@@ -111,8 +114,8 @@ const SearchContainer = (props: {
     };
 
     return (
-        <div className='flex h-full flex-col'>
-            <SearchBar allTags={props.allTags} setPage={setPage} />
+        <>
+            <SearchBar allTags={props.allTags} />
 
             {/* Search params list */}
             {(query || tags.size != 0) && (
@@ -137,7 +140,7 @@ const SearchContainer = (props: {
                 page={page}
                 setPage={setPage}
             ></SearchResults>
-        </div>
+        </>
     );
 };
 
