@@ -22,13 +22,14 @@ export const generateStaticParams = async () => {
 const PostPage = (props: { params: PostMetadata }) => {
     const slug = props.params.slug;
     const metadata: PostMetadata = props.params;
+    const post = getPostData(slug);
 
     // Handle invalid paths
     return isValidPost(slug) ? (
         <>
             <div className='relative flex'>
                 <Image
-                    src={getPostData(slug).data.thumbnail_image}
+                    src={post.data.thumbnail_image}
                     alt='thumbnail-image'
                     width={1024}
                     height={1024}
@@ -40,7 +41,7 @@ const PostPage = (props: { params: PostMetadata }) => {
             </div>
             <ContentArea>
                 <article className='prose prose-slate pt-1'>
-                    <Markdown>{getPostData(slug).content}</Markdown>
+                    <Markdown>{post.content}</Markdown>
                 </article>
             </ContentArea>
         </>
