@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 -   It is statically generated site that uses markdown files to generate the blog-post pages at build-time, with customizable frontmatter.
 -   The search feature comprises of document search with [Elasticlunr.js](http://elasticlunr.com/) and searching by tags. The search results are paginated for ease of viewing.
--   It uses [Tailwind](https://tailwindcss.com/) for it's user interface, with mobile responsive UI and icons from [Boxicons](boxicons.com).
+-   It uses [Tailwind](https://tailwindcss.com/) for it's user interface, with responsive UI and icons from [Boxicons](boxicons.com).
 
 ## Adding Files
 
@@ -10,7 +10,9 @@ You will need a GitHub account and be a collaborator of this project. You should
 
 To add posts, navigate to the `posts/` folder and add the markdown file following the template. Make sure to follow the frontmatter format. Put `hidden: true` to hide a post. Ensure that every field is filled in the frontmatter (Put `''` or `""` if the field is unused or `[]` if there are no tags.). For more information on markdown syntax, you can refer to [this guide](https://www.markdownguide.org/basic-syntax/).
 
-To add images, navigate to the `public/images` folder. Note that the image link in the markdown needs to be configured correctly for it to render. (Note: You can organize the images into subfolders if necessary)
+To add images, navigate to the `public/images` folder. Note that the image link in the markdown needs to be configured correctly for it to render. (Note: You can organize the images into subfolders if necessary.)
+
+Note that a thumbnail image is required for each post.
 
 ## Set up guide
 
