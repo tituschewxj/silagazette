@@ -10,7 +10,7 @@ const PostHeader = (props: { slug: string }) => {
     const post_url = `${PRODUCTION_DEPLOY_URL}/blog/${props.slug}/`;
 
     return (
-        <>
+        <div className='py-8'>
             <h1 className='my-8 font-serif text-4xl font-bold tracking-tight'>
                 {post.data.title}
             </h1>
@@ -56,7 +56,7 @@ const PostHeader = (props: { slug: string }) => {
                     View PDF version of this article
                 </Button>
             )}
-        </>
+        </div>
     );
 };
 
