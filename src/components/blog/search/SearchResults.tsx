@@ -29,7 +29,7 @@ const SearchResults = (props: {
         <>
             <div className='flex flex-grow flex-col'>
                 {postPreviews.length == 0 ? (
-                    <div className='flex-grow text-center font-semibold'>
+                    <div className='flex-grow p-8 text-center font-semibold'>
                         {loading ? <Loading /> : 'No results'}
                     </div>
                 ) : (
