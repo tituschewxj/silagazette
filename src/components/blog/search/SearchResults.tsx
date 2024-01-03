@@ -3,6 +3,7 @@ import Paginate from '../Paginate';
 import PostPreview from '../PostPreview';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { POSTS_PER_PAGE } from '@/constants';
+import Loading from '@/components/Loading';
 
 const SearchResults = (props: {
     filteredPosts: PostData[];
@@ -20,7 +21,7 @@ const SearchResults = (props: {
 
         // Generate post previews
         setPostPreviews(postPreviews);
-        setLoading(false);
+        setTimeout(() => setLoading(false), 1);
     }, [props.filteredPosts.toString(), props.page]);
 
     return (
@@ -29,14 +30,10 @@ const SearchResults = (props: {
             <div className='flex flex-grow flex-col'>
                 {postPreviews.length == 0 ? (
                     <div className='flex-grow text-center font-semibold'>
-                        {loading ? (
-                            <i className='bx bx-loader-alt animate-spin text-2xl'></i>
-                        ) : (
-                            <>No results</>
-                        )}
+                        {loading ? <Loading /> : 'No results'}
                     </div>
                 ) : (
-                    postPreviews?.map((post) => (
+                    postPreviews.map((post) => (
                         <PostPreview key={post.data.slug} post={post} />
                     ))
                 )}
