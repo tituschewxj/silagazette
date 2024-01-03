@@ -8,7 +8,7 @@ const Header = () => {
     const [state, setState] = useState({ isDropdownActive: false });
 
     return (
-        <header className='bg-gradient-to-r from-rose-800 via-red-800 to-red-900 p-4 text-white shadow-md'>
+        <header className='z-20 bg-gradient-to-r from-rose-800 via-red-800 to-red-900 p-4 text-white shadow-md'>
             <div className='container mx-auto flex items-center justify-between'>
                 <Link href='/' className='flex items-center text-lg font-bold'>
                     <img className='h-10' src='/SMU ILA temporary logo.png' />
