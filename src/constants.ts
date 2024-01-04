@@ -1,5 +1,7 @@
-// Limit to the number of posts shown per page
+// Sets the limit to the number of posts shown per page.
 export const POSTS_PER_PAGE = 5;
+
+// The URL at which the live website is deployed at.
 export const PRODUCTION_DEPLOY_URL =
     'https://singapore-international-law-gazette.vercel.app';
 
