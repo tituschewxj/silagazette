@@ -10,7 +10,7 @@ const TextSection = (props: {
                 </h2>
             )}
             {props.children && (
-                <p className='my-4 py-2 text-slate-600'>{props.children}</p>
+                <div className='my-4 py-2 text-slate-600'>{props.children}</div>
             )}
         </>
     );
