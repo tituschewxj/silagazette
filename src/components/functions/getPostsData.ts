@@ -7,7 +7,7 @@ import { HIDE_FUTURE_POSTS } from '@/constants';
 // Get all the posts metadata from the posts folder.
 var allPostsData: PostData[] | null = null;
 export const getPostsData = (): PostData[] => {
-    // if (allPostsData != null) return allPostsData;
+    if (allPostsData != null) return allPostsData;
 
     const folder = 'posts/';
     const files = fs.readdirSync(folder);
