@@ -2,11 +2,12 @@ import { PostData, PostMetadata } from '../../types/PostMetadata';
 import { PageNotFoundError } from 'next/dist/shared/lib/utils';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { HIDE_FUTURE_POSTS } from '@/constants';
 
 // Get all the posts metadata from the posts folder.
 var allPostsData: PostData[] | null = null;
 export const getPostsData = (): PostData[] => {
-    if (allPostsData != null) return allPostsData;
+    // if (allPostsData != null) return allPostsData;
 
     const folder = 'posts/';
     const files = fs.readdirSync(folder);
@@ -33,7 +34,11 @@ export const getPostsData = (): PostData[] => {
             content: matterResults.content,
         };
     });
-    const filteredPosts = posts.filter((post) => !post.data.hidden);
+    const filteredPosts = posts
+        .filter((post) => !post.data.hidden)
+        .filter((post) =>
+            HIDE_FUTURE_POSTS ? Date.parse(post.data.date) < Date.now() : true,
+        );
     allPostsData = filteredPosts;
     return allPostsData;
 };
