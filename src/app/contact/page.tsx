@@ -32,7 +32,10 @@ const ContactPage = () => {
             <TextSection heading=''>
                 Interested in writing for us? Have a piece you'd like to
                 publish? Drop us a message&nbsp;
-                <LinkText link='https://www.google.com/' text='here'></LinkText>
+                <LinkText
+                    link='https://forms.gle/P13qvdUQjGT1ALoN9'
+                    text='here'
+                ></LinkText>
                 !
             </TextSection>
         </ContentArea>
