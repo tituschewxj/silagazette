@@ -32,34 +32,24 @@ const Header = () => {
                     {/* <i className='bx bx-search text-xl'></i> */}
                 </nav>
                 <div className='relative sm:hidden'>
-                    {state.isDropdownActive ? (
-                        <>
-                            <i
-                                className='bx bx-x text-2xl'
-                                onClick={() =>
-                                    setState({
-                                        isDropdownActive: false,
-                                    })
-                                }
-                            ></i>
-                            <Dropdown
-                                onClick={() =>
-                                    setState({
-                                        isDropdownActive: false,
-                                    })
-                                }
-                            ></Dropdown>
-                        </>
-                    ) : (
-                        <i
-                            className='bx bx-menu text-2xl'
-                            onClick={() =>
-                                setState({
-                                    isDropdownActive: true,
-                                })
-                            }
-                        ></i>
-                    )}
+                    <i
+                        className={`bx text-2xl transition-all ${
+                            state.isDropdownActive ? 'bx-x' : 'bx-menu'
+                        }`}
+                        onClick={() =>
+                            setState({
+                                isDropdownActive: !state.isDropdownActive,
+                            })
+                        }
+                    ></i>
+                    <Dropdown
+                        isActive={state.isDropdownActive}
+                        onClick={() =>
+                            setState({
+                                isDropdownActive: false,
+                            })
+                        }
+                    ></Dropdown>
                 </div>
             </div>
         </header>
