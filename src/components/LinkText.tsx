@@ -7,7 +7,7 @@ const LinkText = (props: {
 }) => {
     return props.link ? (
         <Link href={props.link} className={props.className}>
-            <div className='inline underline transition duration-200 hover:text-red-700 hover:decoration-2'>
+            <div className='inline underline transition-all duration-200 hover:text-red-700 hover:decoration-2'>
                 {props.text}
             </div>
         </Link>

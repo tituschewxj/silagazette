@@ -14,7 +14,7 @@ const Paginate = (props: {
                     {props.currentPage != props.firstPage && (
                         <div
                             onClick={() => props.setPage(props.currentPage - 1)}
-                            className=' flex h-10 cursor-pointer items-center justify-center rounded-s-lg border border-gray-300  px-3  text-slate-500 transition duration-200 hover:bg-gray-100 hover:text-slate-700'
+                            className=' flex h-10 cursor-pointer items-center justify-center rounded-s-lg border border-gray-300  px-3  text-slate-500 transition-all duration-200 hover:bg-gray-100 hover:text-slate-700'
                         >
                             <i className='bx bx-chevron-left text-lg'></i>
                         </div>
@@ -54,7 +54,7 @@ const Paginate = (props: {
                     {props.currentPage != props.lastPage && (
                         <div
                             onClick={() => props.setPage(props.currentPage + 1)}
-                            className=' flex h-10 cursor-pointer items-center justify-center rounded-e-lg border border-gray-300  px-3  text-slate-500 transition duration-200 hover:bg-gray-100 hover:text-slate-700'
+                            className=' flex h-10 cursor-pointer items-center justify-center rounded-e-lg border border-gray-300  px-3  text-slate-500 transition-all duration-200 hover:bg-gray-100 hover:text-slate-700'
                         >
                             <i className='bx bx-chevron-right text-lg'></i>
                         </div>
@@ -76,13 +76,13 @@ const PaginateNumber = (props: {
     return props.value < props.firstPage || props.value > props.lastPage ? (
         <></>
     ) : props.selected ? (
-        <div className='flex h-10 items-center border  border-gray-300 bg-gray-100  px-4  text-red-700 shadow-md transition duration-200 hover:bg-gray-200 hover:text-red-600 '>
+        <div className='flex h-10 items-center border  border-gray-300 bg-gray-100  px-4  text-red-700 shadow-md transition-all duration-200 hover:bg-gray-200 hover:text-red-600 '>
             {props.value}
         </div>
     ) : (
         <div
             onClick={() => props.setPage(props.value)}
-            className=' flex h-10 cursor-pointer items-center border border-gray-300  px-4  text-slate-500 transition duration-200 hover:bg-gray-100 hover:text-slate-700 '
+            className=' flex h-10 cursor-pointer items-center border border-gray-300  px-4  text-slate-500 transition-all duration-200 hover:bg-gray-100 hover:text-slate-700 '
         >
             {props.value}
         </div>

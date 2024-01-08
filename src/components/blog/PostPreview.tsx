@@ -11,16 +11,16 @@ const PostPreview = (props: { post: PostData }) => {
     const post = props.post;
     return (
         // TODO: fix image size and improve listing of posts.
-        <div className='group relative my-2 flex rounded-lg shadow-md transition duration-200 ease-in-out hover:scale-[1.01] hover:bg-gray-100'>
+        <div className='group relative my-2 flex rounded-lg shadow-md transition-all duration-200 ease-in-out hover:scale-[1.01] hover:bg-gray-100'>
             <Image
                 src={post.data.thumbnail_image}
                 alt='thumbnail-image'
                 width={1024}
                 height={1024}
-                className='hidden w-1/4 rounded-l-lg bg-white object-cover filter transition duration-200  group-hover:saturate-[1.2] sm:block'
+                className='hidden w-1/4 rounded-l-lg bg-white object-cover filter transition-all duration-200  group-hover:saturate-[1.2] sm:block'
             ></Image>
             <div className='p-2 sm:p-5'>
-                <h1 className='font-serif text-2xl font-bold tracking-tight transition duration-150 group-hover:text-red-700 group-hover:underline'>
+                <h1 className='font-serif text-2xl font-bold tracking-tight transition-all duration-150 group-hover:text-red-700 group-hover:underline'>
                     {post.data.title}
                 </h1>
 

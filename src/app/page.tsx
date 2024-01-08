@@ -33,7 +33,7 @@ export default function HomePage() {
                     </p>
                     <Button
                         href='/blog'
-                        className='mx-auto py-8 text-center transition duration-200 ease-in-out hover:scale-[1.05]'
+                        className='mx-auto py-8 text-center transition-all duration-200 ease-in-out hover:scale-[1.05]'
                     >
                         Get started
                     </Button>
