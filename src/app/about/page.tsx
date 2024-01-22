@@ -65,7 +65,7 @@ const AboutUsPage = () => {
                     position='Sponsorship Directors'
                 />
                 <PeopleRoles
-                    names={['Gabrielle Joy', 'Issac Lu Yang']}
+                    names={['Gabrielle Joy', 'Isaac Lu Yang']}
                     position='Events Directors'
                 />
                 <PeopleRoles
