@@ -26,13 +26,13 @@ export default function HomePage() {
                 <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/law_items_bg.jpeg")] bg-cover opacity-10 blur-sm'></div>
                 <div className='container z-10 mx-auto text-center'>
                     <h1 className='mb-4 text-4xl font-bold leading-tight'>
-                        Welcome to the Singapore International Law Gazette
+                        Welcome to the SILA Gazette!
                     </h1>
-                    <p className='mb-8 text-lg md:text-xl'>
+                    {/* <p className='mb-8 text-lg md:text-xl'>
                         SILA (Singapore) is the inaugural Student Chapter of the
                         International Law Association (ILA) Singapore Branch -
                         the first in the world!
-                    </p>
+                    </p> */}
                     <Button
                         href='/blog'
                         className='mx-auto py-8 text-center transition-all duration-200 ease-in-out hover:scale-[1.05]'
