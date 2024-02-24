@@ -2,15 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
-import { Noto_Serif } from 'next/font/google';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
     title: 'Singapore International Law Gazette',
     description: 'A website by SMU-ILA Student Chapter',
 };
-
-const font = Noto_Serif({ subsets: ['latin'], fallback: ['Times New Roman'] });
 
 export default function RootLayout({
     children,
@@ -39,7 +36,7 @@ export default function RootLayout({
                     gtag('config', 'G-6N2ZDYFFJV');
                 `}
             </Script>
-            <body className={`${font.className} flex min-h-screen flex-col`}>
+            <body className={`flex min-h-screen flex-col`}>
                 <Header />
                 {/* TODO: Nav Bar */}
                 <div className='flex-grow'>{children}</div>

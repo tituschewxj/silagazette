@@ -6,9 +6,7 @@ const Footer = () => {
         <footer className='mt-6 bg-gray-800 p-6 text-white sm:mt-8 sm:pt-14'>
             <div className='container mx-auto flex items-center justify-around gap-10'>
                 <div>
-                    <h1 className='text-lg font-bold'>
-                        SMU-ILA Student Chapter
-                    </h1>
+                    <h1 className='text-lg font-bold'>SILA Gazette</h1>
                     <p className='text-xs text-slate-200'>
                         SILA (Singapore) is the inaugural Student Chapter of the
                         International Law Association (ILA) Singapore Branch -
@@ -72,8 +70,7 @@ const Footer = () => {
             {/* Copyright */}
             {/* TODO: include statement about the rights reserved or provide a link to a more detailed terms of use or copyright policy page if applicable */}
             <div className='mb-2 mt-14 text-center text-xs text-slate-400'>
-                ©2023 Singapore Management University-International Law
-                Association Student Chapter. All rights reserved.
+                ©2024 SILA Gazette. All rights reserved.
             </div>
         </footer>
     );

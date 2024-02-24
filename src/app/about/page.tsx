@@ -8,6 +8,7 @@ const AboutUsPage = () => {
             <div className='flex items-center justify-center'>
                 <img src='SILA_full_logo.jpg' alt='SILA logo' />
             </div>
+            {/* NOTE: Catchphrase? */}
             {/* <h1 className='m-4 mt-16 text-3xl font-extrabold'></h1> */}
             {/* <hr /> */}
 

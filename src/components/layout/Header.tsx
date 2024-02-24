@@ -12,12 +12,12 @@ const Header = () => {
             <div className='container mx-auto flex items-center justify-between'>
                 <Link href='/' className='flex items-center text-lg font-bold'>
                     <img
-                        className='h-10'
-                        src='/SILA_full_logo.jpg'
+                        className='h-10 rounded-md'
+                        src='/SILA_enlarged_logo.jpg'
                         alt='Sila Logo'
                     />
-                    <div className='hidden px-2 font-serif text-lg font-extralight tracking-tight sm:block md:text-2xl lg:text-3xl'>
-                        Singapore International Law Gazette
+                    <div className='px-2 font-serif text-lg font-extralight tracking-tight sm:text-xl md:text-2xl lg:text-3xl'>
+                        SILA Gazette
                     </div>
                 </Link>
 
