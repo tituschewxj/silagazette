@@ -76,7 +76,7 @@ const PaginateNumber = (props: {
     return props.value < props.firstPage || props.value > props.lastPage ? (
         <></>
     ) : props.selected ? (
-        <div className='flex h-10 items-center border  border-gray-300 bg-gray-100  px-4  text-red-700 shadow-md transition-all duration-200 hover:bg-gray-200 hover:text-red-600 '>
+        <div className='flex h-10 items-center border  border-gray-300 bg-gray-100  px-4  text-purple-700 shadow-md transition-all duration-200 hover:bg-gray-200 hover:text-purple-600 '>
             {props.value}
         </div>
     ) : (

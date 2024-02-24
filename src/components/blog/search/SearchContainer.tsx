@@ -128,7 +128,7 @@ const SearchContainer = (props: {
                     ></TagsList>
                     <div
                         onClick={clearResults}
-                        className='cursor-pointer truncate text-red-800 underline hover:text-red-600'
+                        className='cursor-pointer truncate text-purple-800 underline hover:text-purple-600'
                     >
                         clear results
                     </div>

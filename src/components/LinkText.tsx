@@ -12,7 +12,7 @@ const LinkText = (props: {
             className={props.className}
             target={props.new_tab ? '_blank' : ''}
         >
-            <div className='inline underline transition-all duration-200 hover:text-red-700 hover:decoration-2'>
+            <div className='inline underline transition-all duration-200 hover:text-purple-700 hover:decoration-2'>
                 {props.text}
             </div>
         </Link>

@@ -4,7 +4,7 @@ const Dropdown = (props: { onClick: () => void; isActive: boolean }) => {
     return (
         // NOTE: height of dropdown is hardcoded
         <nav
-            className={`absolute right-0 z-30 flex flex-shrink flex-col gap-10 overflow-hidden rounded-xl bg-red-900 transition-all duration-200 ${
+            className={`absolute right-0 z-30 flex flex-shrink flex-col gap-10 overflow-hidden rounded-xl bg-purple-900 transition-all duration-200 ${
                 props.isActive ? 'h-[17.5em] p-8' : 'h-0 p-0 opacity-0'
             }`}
         >

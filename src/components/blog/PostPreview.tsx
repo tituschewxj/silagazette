@@ -20,7 +20,7 @@ const PostPreview = (props: { post: PostData }) => {
                 className='hidden w-1/4 rounded-l-lg bg-white object-cover filter transition-all duration-200  group-hover:saturate-[1.2] sm:block'
             ></Image>
             <div className='p-2 sm:p-5'>
-                <h1 className='font-serif text-2xl font-bold tracking-tight transition-all duration-150 group-hover:text-red-700 group-hover:underline'>
+                <h1 className='font-serif text-2xl font-bold tracking-tight transition-all duration-150 group-hover:text-purple-700 group-hover:underline'>
                     {post.data.title}
                 </h1>
 
