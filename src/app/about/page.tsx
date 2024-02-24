@@ -5,48 +5,26 @@ import TextSection from '@/components/TextSection';
 const AboutUsPage = () => {
     return (
         <ContentArea>
-            <h1 className='m-4 mt-16 text-3xl font-extrabold'>
-                Insert catchphrase.
-            </h1>
-            <TextSection>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse iaculis erat sit amet lorem iaculis, vitae ultrices
-                elit facilisis. In ut lorem metus. Sed nec urna aliquam,
-                tristique nulla feugiat, vulputate turpis. Sed semper eros nec
-                bibendum condimentum. Nulla at velit egestas, sollicitudin nisi
-                nec, mollis est. Aenean tempor, erat sed luctus placerat, erat
-                nisl pellentesque arcu, ac eleifend risus tortor eget risus.
-                Nullam tincidunt imperdiet erat, sit amet pulvinar sapien
-                condimentum ac.
-            </TextSection>
-            <img src='' alt='TODO: Insert images if any' />
-            <hr />
+            <div className='flex items-center justify-center'>
+                <img src='SILA_full_logo.jpg' alt='SILA logo' />
+            </div>
+            {/* <h1 className='m-4 mt-16 text-3xl font-extrabold'></h1> */}
+            {/* <hr /> */}
 
             <TextSection heading='Our mission'>
-                The SMU-International Law Association (ILA) Student Chapter
-                Organising Committee is dedicated to fostering a deeper
-                comprehension of international law within the student community.
-                Our mission is dual-fold: organizing engaging events featuring
-                distinguished practitioners and academics, and cultivating
-                extensive research across diverse realms of private and public
-                international law. Committed to expanding awareness and
-                understanding, we aim to create a dynamic platform that brings
-                together legal professionals, scholars, and students, driving
-                insightful discussions and fostering a rich environment for
-                intellectual exploration and collaboration within the
-                captivating realm of international law.
+                SILA (Singapore) is Singapore’s inaugural Student Chapter of the
+                International Law Association and the first in the world! We aim
+                to cultivate student interest in international law, provide
+                insightful perspectives on international law, and foster
+                meaningful connections between students and professionals.
             </TextSection>
             {/* NOTE: Insert timeline? */}
             {/* NOTE: Add sponsors? */}
             <hr />
 
-            <TextSection heading='2024 Organising Committee'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                euismod vel nulla id vulputate. Cras nec tortor dui. Sed
-                molestie.
-            </TextSection>
+            <TextSection heading='2024 Organising Committee'></TextSection>
 
-            <div className='grid grid-cols-2 gap-4'>
+            <div className='grid grid-cols-2 gap-6 py-10'>
                 <PeopleRoles names={['Hor Wen Qin']} position='President' />
                 <PeopleRoles
                     names={[

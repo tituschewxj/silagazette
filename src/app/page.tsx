@@ -29,7 +29,9 @@ export default function HomePage() {
                         Welcome to the Singapore International Law Gazette
                     </h1>
                     <p className='mb-8 text-lg md:text-xl'>
-                        A brief description of what your website is about.
+                        SILA (Singapore) is the inaugural Student Chapter of the
+                        International Law Association (ILA) Singapore Branch -
+                        the first in the world!.
                     </p>
                     <Button
                         href='/blog'

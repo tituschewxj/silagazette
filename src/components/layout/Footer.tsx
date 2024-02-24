@@ -1,3 +1,4 @@
+import { ACCOUNTS } from '@/constants';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -8,8 +9,10 @@ const Footer = () => {
                     <h1 className='text-lg font-bold'>
                         SMU-ILA Student Chapter
                     </h1>
-                    <p className='text-sm text-slate-200'>
-                        Insert a brief description of your club.
+                    <p className='text-xs text-slate-200'>
+                        SILA (Singapore) is the inaugural Student Chapter of the
+                        International Law Association (ILA) Singapore Branch -
+                        the first in the world!.
                     </p>
                 </div>
 
@@ -43,19 +46,19 @@ const Footer = () => {
                     <div className='flex space-x-2 p-2'>
                         {/* TODO: Add links to social media */}
                         <Link
-                            href='#'
+                            href={ACCOUNTS.TELEGRAM_URL}
                             className='text-xl text-gray-300 hover:text-white'
                         >
-                            <i className='bx-fw bx bxl-facebook-square'></i>
+                            <i className='bx-fw bx bxl-telegram'></i>
                         </Link>
                         <Link
-                            href='#'
+                            href={ACCOUNTS.LINKEDIN_URL}
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-linkedin'></i>
                         </Link>
                         <Link
-                            href='#'
+                            href={ACCOUNTS.INSTAGRAM_URL}
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-instagram'></i>

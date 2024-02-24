@@ -11,7 +11,11 @@ const Header = () => {
         <header className='z-20 bg-gradient-to-r from-rose-800 via-red-800 to-red-900 p-4 text-white shadow-md'>
             <div className='container mx-auto flex items-center justify-between'>
                 <Link href='/' className='flex items-center text-lg font-bold'>
-                    <img className='h-10' src='/SMU ILA temporary logo.png' />
+                    <img
+                        className='h-10'
+                        src='/SILA_full_logo.jpg'
+                        alt='Sila Logo'
+                    />
                     <div className='hidden px-2 font-serif text-lg font-extralight tracking-tight sm:block md:text-2xl lg:text-3xl'>
                         Singapore International Law Gazette
                     </div>
