@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'A website by SMU-ILA Student Chapter',
 };
 
-const font = Noto_Serif({ subsets: ['latin'] });
+const font = Noto_Serif({ subsets: ['latin'], fallback: ['Times New Roman'] });
 
 export default function RootLayout({
     children,
