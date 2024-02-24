@@ -12,7 +12,7 @@ const Footer = () => {
                     <p className='text-xs text-slate-200'>
                         SILA (Singapore) is the inaugural Student Chapter of the
                         International Law Association (ILA) Singapore Branch -
-                        the first in the world!.
+                        the first in the world!
                     </p>
                 </div>
 

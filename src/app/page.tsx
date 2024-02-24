@@ -31,7 +31,7 @@ export default function HomePage() {
                     <p className='mb-8 text-lg md:text-xl'>
                         SILA (Singapore) is the inaugural Student Chapter of the
                         International Law Association (ILA) Singapore Branch -
-                        the first in the world!.
+                        the first in the world!
                     </p>
                     <Button
                         href='/blog'
