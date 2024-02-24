@@ -25,3 +25,9 @@ npm run dev
 ```
 
 The website can be accessed on `localhost:3000`.
+
+---
+
+## User Guide
+
+The user guide can be found [here](https://tituschewxj.github.io/law-gazette-blog-project/).
