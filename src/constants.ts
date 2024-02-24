@@ -18,7 +18,7 @@ export const ACCOUNTS = {
     LINKEDIN_URL: 'https://www.linkedin.com/in/silasingapore/',
 
     // The link to the SILA Instagram page.
-    INSTAGRAM_URL: '',
+    INSTAGRAM_URL: 'https://www.instagram.com/sila.singapore/',
 
     // The link to the SILA telegram chat.
     TELEGRAM_URL: '',

@@ -44,21 +44,23 @@ const Footer = () => {
                 <div className='hidden sm:block'>
                     <p className='p-2 text-sm'>Follow Us:</p>
                     <div className='flex space-x-2 p-2'>
-                        {/* TODO: Add links to social media */}
                         <Link
                             href={ACCOUNTS.TELEGRAM_URL}
+                            target='_blank'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-telegram'></i>
                         </Link>
                         <Link
                             href={ACCOUNTS.LINKEDIN_URL}
+                            target='_blank'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-linkedin'></i>
                         </Link>
                         <Link
                             href={ACCOUNTS.INSTAGRAM_URL}
+                            target='_blank'
                             className='text-xl text-gray-300 hover:text-white'
                         >
                             <i className='bx-fw bx bxl-instagram'></i>
@@ -66,6 +68,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
             {/* Copyright */}
             {/* TODO: include statement about the rights reserved or provide a link to a more detailed terms of use or copyright policy page if applicable */}
             <div className='mb-2 mt-14 text-center text-xs text-slate-400'>
