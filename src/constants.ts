@@ -2,8 +2,8 @@
 export const POSTS_PER_PAGE = 5;
 
 // The URL at which the live website is deployed at.
-export const PRODUCTION_DEPLOY_URL =
-    'https://singapore-international-law-gazette.vercel.app';
+// This is used to create the sharing link on various social media.
+export const PRODUCTION_DEPLOY_URL = 'https://www.silagazette.com';
 
 // When true, posts which `date` are in the future will not be shown.
 // Otherwise, posts will be shown regardless of their `date`
@@ -21,5 +21,5 @@ export const ACCOUNTS = {
     INSTAGRAM_URL: 'https://www.instagram.com/sila.singapore/',
 
     // The link to the SILA telegram chat.
-    TELEGRAM_URL: '',
+    TELEGRAM_URL: 'https://t.me/silasingapore',
 };
