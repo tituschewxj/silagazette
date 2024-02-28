@@ -5,6 +5,7 @@ const LinkText = (props: {
     text: string;
     className?: string;
     new_tab?: boolean;
+    inline?: boolean;
 }) => {
     return props.link ? (
         <Link
@@ -12,7 +13,11 @@ const LinkText = (props: {
             className={props.className}
             target={props.new_tab ? '_blank' : ''}
         >
-            <div className='inline underline transition-all duration-200 hover:text-purple-700 hover:decoration-2'>
+            <div
+                className={`${
+                    props.inline ? 'inline' : ''
+                } underline transition-all duration-200 hover:text-purple-700 hover:decoration-2`}
+            >
                 {props.text}
             </div>
         </Link>

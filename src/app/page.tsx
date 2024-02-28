@@ -23,9 +23,9 @@ export default function HomePage() {
         <main>
             {/* Hero section */}
             <section className='relative flex h-screen items-center bg-gradient-to-r from-violet-800 via-purple-800 to-fuchsia-950 px-2 text-white shadow-md '>
-                <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/law_items_bg.jpeg")] bg-cover opacity-10 blur-sm'></div>
+                <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/Garamond.png")] bg-auto bg-fixed bg-top opacity-80'></div>
                 <div className='container z-10 mx-auto text-center'>
-                    <h1 className='mb-4 text-4xl font-bold leading-tight'>
+                    <h1 className='mb-4 bg-gradient-to-r from-pink-700 to-violet-700 bg-clip-text text-4xl font-bold leading-tight text-transparent'>
                         Welcome to the SILA Gazette!
                     </h1>
                     {/* <p className='mb-8 text-lg md:text-xl'>

@@ -25,6 +25,7 @@ const PostHeader = (props: { slug: string }) => {
                     <LinkText
                         link={post.data.author_link}
                         text={post.data.author}
+                        inline
                     />
                 </div>
 

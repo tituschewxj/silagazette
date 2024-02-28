@@ -36,6 +36,7 @@ const ContactPage = () => {
                     link='https://forms.gle/P13qvdUQjGT1ALoN9'
                     text='here'
                     new_tab
+                    inline
                 ></LinkText>
                 !
             </TextSection>

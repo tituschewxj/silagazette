@@ -1,4 +1,5 @@
 import ContentArea from '@/components/ContentArea';
+import LinkText from '@/components/LinkText';
 import PeopleRoles from '@/components/PeopleRoles';
 import TextSection from '@/components/TextSection';
 
@@ -23,9 +24,49 @@ const AboutUsPage = () => {
             {/* NOTE: Add sponsors? */}
             <hr />
 
+            {/* TODO: abstract out to separate component? */}
+            <TextSection heading='Practitioner Advisor'>
+                <LinkText
+                    text='Anthony Cheah Nicholls'
+                    link='https://havelocklaw.com.sg/anthony-cheah-nicholls-profile/'
+                    className='text-lg text-slate-800'
+                    new_tab
+                />
+                <p className='my-4'>Counsel, International Arbitration</p>
+                Anthony is a dual-qualified international dispute resolution
+                lawyer who is regularly engaged as counsel, arbitrator or
+                mediator for commercial disputes. He is the exclusive winner of
+                Lexology’s 2024 Client Choice Award for Arbitration in Singapore
+                where he was described as having “excellent legal skills” and
+                “sharp analytical skills”, being “extremely approachable and
+                always willing to meet clients’ demands”, and overall being
+                “very commercial minded…a successful problem solver”.
+            </TextSection>
+            <hr />
+
+            <TextSection heading='Academic Advisor'>
+                <LinkText
+                    text='Stefanie Schacherer'
+                    link='https://law.smu.edu.sg/faculty/profile/6486/stefanie-schacherer'
+                    className='text-lg text-slate-800'
+                    new_tab
+                />
+                <p className='my-4'>
+                    Full-time Faculty, Assistant Professor of Law
+                </p>
+                <li>
+                    Doctor iuris, Universities of Geneva and Vienna
+                    (co-tutelle), 2019
+                </li>
+                <li>LL.M., King’s College London, 2014</li>
+                <li>Master of Laws, University of Geneva, 2013</li>
+                <li>Bachelor of Laws, University of Geneva, 2011</li>
+            </TextSection>
+            <hr />
+
             <TextSection heading='2024 Organising Committee'></TextSection>
 
-            <div className='grid grid-cols-2 gap-6 py-10'>
+            <div className='grid grid-cols-2 gap-4 py-8'>
                 <PeopleRoles names={['Hor Wen Qin']} position='President' />
                 <PeopleRoles
                     names={[
