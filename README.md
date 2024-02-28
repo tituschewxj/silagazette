@@ -9,7 +9,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Clone the repository and navigate into the root directory of the project.
 
 ```bash
-git clone https://github.com/tituschewxj/law-gazette-blog-project.git
+git clone https://github.com/tituschewxj/silagazette.git
 ```
 
 2. Install dependencies.
@@ -30,4 +30,4 @@ The website can be accessed on `localhost:3000`.
 
 ## User Guide
 
-The user guide can be found [here](https://tituschewxj.github.io/law-gazette-blog-project/).
+The user guide for maintaining posts on the website can be found [here](https://tituschewxj.github.io/silagazette/).
