@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import Dropdown from './Dropdown';
+import Dropdown from './NavbarDropdown';
 
 const Header = () => {
     const [state, setState] = useState({ isDropdownActive: false });
@@ -21,40 +21,45 @@ const Header = () => {
                     </div>
                 </Link>
 
-                {/* <!-- Navigation --> */}
-                <nav className='hidden items-center space-x-4 sm:flex'>
-                    <Link href='/blog' className='hover:text-gray-300'>
-                        Blog
-                    </Link>
-                    <Link href='/about' className='hover:text-gray-300'>
-                        About
-                    </Link>
-                    <Link href='/contact' className='hover:text-gray-300'>
-                        Contact
-                    </Link>
-                    {/* TODO: Search feature */}
-                    {/* <i className='bx bx-search text-xl'></i> */}
-                </nav>
-                <div className='relative sm:hidden'>
-                    <i
-                        className={`bx text-2xl transition-all ${
-                            state.isDropdownActive ? 'bx-x' : 'bx-menu'
-                        }`}
-                        onClick={() =>
-                            setState({
-                                isDropdownActive: !state.isDropdownActive,
-                            })
-                        }
-                    ></i>
-                    <Dropdown
-                        isActive={state.isDropdownActive}
-                        onClick={() =>
-                            setState({
-                                isDropdownActive: false,
-                            })
-                        }
-                    ></Dropdown>
-                </div>
+                {/* <!-- Navigation: either dropdown or the nav bar depending on screen width --> */}
+                <>
+                    <nav className='hidden items-center space-x-4 sm:flex'>
+                        <Link href='/blog' className='hover:text-gray-300'>
+                            Blog
+                        </Link>
+                        <Link href='/events' className='hover:text-gray-300'>
+                            Events
+                        </Link>
+                        <Link href='/about' className='hover:text-gray-300'>
+                            About
+                        </Link>
+                        <Link href='/contact' className='hover:text-gray-300'>
+                            Contact
+                        </Link>
+                        {/* TODO: Search feature */}
+                        {/* <i className='bx bx-search text-xl'></i> */}
+                    </nav>
+                    <div className='relative sm:hidden'>
+                        <i
+                            className={`bx text-2xl transition-all ${
+                                state.isDropdownActive ? 'bx-x' : 'bx-menu'
+                            }`}
+                            onClick={() =>
+                                setState({
+                                    isDropdownActive: !state.isDropdownActive,
+                                })
+                            }
+                        ></i>
+                        <Dropdown
+                            isActive={state.isDropdownActive}
+                            onClick={() =>
+                                setState({
+                                    isDropdownActive: false,
+                                })
+                            }
+                        ></Dropdown>
+                    </div>
+                </>
             </div>
         </header>
     );
