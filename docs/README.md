@@ -17,7 +17,16 @@ You will need a GitHub account and be a collaborator of this project. You should
 1. To add images, navigate to the `public/images` folder.
     1. The image link in the markdown needs to be configured correctly for it to render. (Note: You can organize the images into subfolders if necessary.)
 
-## Post metadata
+## Additional Information
+
+## Branching
+
+There are two branches: `staging` and `master`.
+
+-   Changes on the `master` branch will be reflected on the production version of the website at `https://www.silagazette.com/` and `https://silagazette.vercel.app/`
+-   Changes on `staging` branch will be reflected on the staging version of the website at `https://silagazette-staging.vercel.app/`. We can use the staging version of the website for testing changes before updating the `master` branch via creating a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+
+### Post metadata
 
 A post's metadata can be found in the frontmatter of the markdown file, which is found at the top of the markdown file, within the triple dashes (`---`).
 

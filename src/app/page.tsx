@@ -22,10 +22,10 @@ export default function HomePage() {
     return (
         <main>
             {/* Hero section */}
-            <section className='relative flex h-screen items-center bg-gradient-to-r from-violet-800 via-purple-800 to-fuchsia-950 px-2 text-white shadow-md '>
-                <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/Garamond.png")] bg-auto bg-fixed bg-top opacity-80'></div>
+            <section className='relative flex h-[639px] items-center bg-gradient-to-r from-violet-800 via-purple-800 to-fuchsia-950 px-2 text-white shadow-md sm:h-[999px]'>
+                <div className='pointer-events-none absolute inset-0 z-0 bg-[url("/Hero_section.png")] bg-[length:1280px_720px] bg-fixed bg-top bg-repeat-x opacity-95 sm:bg-[length:1920px_1080px]'></div>
                 <div className='container z-10 mx-auto text-center'>
-                    <h1 className='mb-4 bg-gradient-to-r from-pink-700 to-violet-700 bg-clip-text text-4xl font-bold leading-tight text-transparent sm:text-5xl'>
+                    {/* <h1 className='mb-4 bg-gradient-to-r from-pink-700 to-violet-700 bg-clip-text text-4xl font-bold leading-tight text-transparent sm:text-5xl'>
                         SILA: the Student Chapter of the ILA.
                     </h1>
                     <p className='text-xs text-purple-900 md:text-sm'>
@@ -33,11 +33,11 @@ export default function HomePage() {
                         International Law Association (Singapore) and advisors
                         Mr Anthony Cheah Nicholls and Professor Stefanie
                         Schacherer.
-                    </p>
+                    </p> */}
 
                     <Button
                         href='/blog'
-                        className='mx-auto py-8 text-center transition-all duration-200 ease-in-out hover:scale-[1.05]'
+                        className='mx-auto mt-10 py-8 text-center transition-all duration-200 ease-in-out hover:scale-[1.05] sm:mt-20 sm:text-xl'
                     >
                         Get started
                     </Button>
