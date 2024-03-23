@@ -6,7 +6,7 @@ This is the user guide for updating and maintaining posts on this website.
 
 You will need a GitHub account and be a collaborator of this project. You should be able to add files from directly GitHub.
 
-## Walkthrough: Creating/Updating a post
+### Walkthrough: Creating/Updating a post
 
 1. Convert the content to markdown syntax, and move the content into markdown file. (The file extension is `.md`.)
     1. For more information on markdown syntax, you can refer to [this guide](https://www.markdownguide.org/basic-syntax/).
@@ -19,7 +19,7 @@ You will need a GitHub account and be a collaborator of this project. You should
 
 ## Additional Information
 
-## Branching
+### Branching
 
 There are two branches: `staging` and `master`.
 
